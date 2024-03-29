@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+  font-family: "Marcellus", serif;
+  font-weight: 500;
+}
+.nav-bg {
+  background-color: #e3e3da;
+}
+.logo {
+  height: 9rem;
+}
+
+/* search-input */
+.search-state input {
+  height: 4rem;
+  width: 20rem;
+  font-size: 1.5rem;
+}
+
+.btn-search {
+  height: 4rem;
+  width: 9.5rem;
+  font-size: 1.5rem;
+  background: #e6b908;
+  transition: 0.5s;
+}
+
+.btn-search:hover {
+  background-color: rgb(114, 97, 29);
+  color: whitesmoke;
+}
+.btn-search:active {
+  background-color: rgb(124, 130, 75) !important;
+  outline: none !important;
+}
+.btn-search:focus {
+  outline: none !important;
+  box-shadow: 0 0 5px rgba(30, 27, 14, 0.5);
+  border: none;
+  color: #e6b908;
+}
+
+.navbar-toggler-icon {
+  font-size: 2.5rem;
+}
+.navbar-toggler {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+footer {
+  margin-top: 10rem;
+}
+
+/* footer */
+
+.footer-container {
+  /* background-color: aquamarine; */
+  /* height: 40vh; */
+  margin-top: 4rem;
+}
+.footer-container img {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-container p {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.footer-container ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.link-trans:after {
+  content: "";
+  width: 100%;
+  background-color: #e6b908;
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  border-radius: 0.6rem;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  height: 0.2rem;
+}
+
+.link-trans:hover:after {
+  transform: scaleX(1);
+}
+
+.footer-container ul li {
+  list-style: none;
+}
+
+.service {
+  padding: 0;
+}
+.footer-container h3 {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+.footer-social {
+  /* border: 1px solid black; */
+  margin-top: 4rem;
+}
+.footer-social i {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.form-footer {
+  /* border-bottom: 1px solid black; */
+  position: relative;
+}
+
+.form-footer:after {
+  content: "";
+  width: 82%;
+  height: 0.2rem;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  background-color: black;
+}
+form input {
+  outline: none;
+  background: transparent;
+  border: 0;
+  width: 70%;
+}
+
+form button {
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.link-trans {
+  position: relative;
+}
+
+/* Our Beer Section */
+
+.img-resize {
+  cursor: pointer;
+}
+
+/* modal */
+
+.modal {
+  margin-top: 3rem;
+}
+.modal-dialog {
+  max-width: 90rem;
+}
+
+.img-resize {
+  height: 50rem;
+  text-align: center;
+}
+.img-resize img {
+  height: 100%;
+}
+
+.beer-description {
+  padding-right: 3rem;
+  font-weight: bold;
+}
+.beer-description span {
+  font-weight: normal;
+}
+.modal-header {
+  justify-content: space-between;
+}
+
+.close {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50rem;
+  border: none;
+  background-color: #e6b908;
+}
+
+.card {
+  border: none;
+}
+
+/* sort */
+.beer-tagline {
+  display: inline-block;
+}

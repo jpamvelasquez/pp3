@@ -9,10 +9,197 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="icon" stylesheet="#" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="icon" href="./images/favicon.svg" />
+    <link rel="stylesheet" href="./style.css" />
     <title>brews co.</title>
   </head>
   <body>
+    <!-- Navbar -->
+    <div class="container-fluid sticky-top nav-bg">
+      <div class="container navbar navbar-expand-lg d-flex align-items-center">
+        <div class="container-fluid">
+          <a
+            href="./index.html"
+            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+          >
+            <img src="./images/logo.svg" class="logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <a
+                href="./index.html"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+              >
+                <img src="./images/logo.svg" class="logo" />
+              </a>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 ps-4 service">
+                <li class="nav-item me-3">
+                  <a class="nav-link active link-trans" aria-current="page" href="#"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link link-trans" href="#">Menus</a>
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link link-trans" href="#">Our beers</a>
+                </li>
+                <li class="nav-item me-3">
+                  <a class="nav-link link-trans" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-trans" href="#">Contact</a>
+                </li>
+              </ul>
+              <form
+                class="d-flex align-items-center search-state d-flex ps-3"
+                role="search"
+              >
+                <input
+                  class="form-control me-2 align-items-center"
+                  type="search"
+                  placeholder="Search by State"
+                  aria-label="Search"
+                />
+                <button class="btn btn-search" type="submit">
+                  Search <i class="bi bi-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!-- End of Navbar -->
+
+<!-- Our BEER SECTION -->
+  <section class="ourBeers">
+    <div class="container-fluid pt-5">
+      <div class="container beer-featured">
+        <div class="row text-center">
+          <div class="col mb-5">
+            <h2 class="beer-text">Our Beer</h2>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <h2 class="beer-tagline">Our Finest Beers</h2>
+          <div class="sort-beer"><h2>Sort By</h2></div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4 pb-4 text-center beer-section">
+          <div class="col-md-6 col-lg-3">
+            <div class="card"> 
+              <div class="img-resize"  data-bs-toggle="modal" data-bs-target="#beerSection">
+              <img src="./images/beerCover/dragon.png" class="card-img-top" />
+              </div>
+              <div class="card-body">
+                <p class="card-title">Dragon's Draught</p>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- OUR BEER SECTION END -->
+
+  <!-- modal -->
+  <div class="beer-modal"></div>
+  
+ <!-- Endmodal -->
+
+
+
+    <!-- footer -->
+    <footer id="footer">
+      <div class="container-fluid nav-bg">
+        <div class="container footer-container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+              <img src="./images/logo.svg" alt="Logo" class="logo" />
+              <p>
+                Discover the world with confidence through our meticulously
+                curated travel tours, where every destination becomes a chapter
+                in your personal adventure story.
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3">
+              <h3>OFFICE</h3>
+              <p>102 Tremona Road</p>
+              <p>SO16 6HT</p>
+              <p>93 Laundry Road</p>
+              <p>Southampton, United Kingdom</p>
+              <p>Tel: 073 123 456</p>
+              <p class="email">brewsco@gmail.com</p>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-2">
+                <h3>LINKS</h3>
+                <ul class="service">
+                  <li><a href="#" class="link-trans">Home</a></li>
+                  <li><a href="#" class="link-trans">Menus</a></li>
+                  <li><a href="#" class="link-trans">Our Beers</a></li>
+                  <li><a href="#" class="link-trans">About</a></li>
+                  <li><a href="#" class="link-trans">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3">
+              <h3>NEWSLETTER</h3>
+              <form class="form-footer">
+                <i class="bi bi-envelope-at-fill"></i>
+                <input type="email" placeholder="Enter your email" />
+                <button type="submit"><i class="bi bi-arrow-right"></i></button>
+              </form>
+              <div class="footer-social">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter-x"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-pinterest"></i>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <p class="text-center pb-5">the Brews co. | &copy 2024 - All Rights Reserved!</p>
+        </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

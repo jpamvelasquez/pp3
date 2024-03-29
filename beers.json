@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Dragons's Draught",
+    "description": "Born from the volcanic depths of the dragon's lair, Dragon's Draught is a formidable brew with an ABV of 6.8%. Its deep crimson hue mirrors the inferno from which it emerged. Robust aromas of roasted barley and smoked oak herald its arrival, while its bold roastiness and fiery hops ignite the palate. Pair it with hearty beef stew or charred meats for a feast fit for a dragon slayer.",
+    "abv": "6.8%",
+    "color": "Deep Crimson",
+    "aromatics": "Roasted Barley, Smoked Oak",
+    "flavor": "Bold Roastiness, Fiery Hops",
+    "price": "5 USD",
+    "bestwith": "Hearty Beef Stew or Charred Meats",
+    "photo": "./images/beerCover/dragon.png"
+  },
+  {
+    "name": "Tangerine Tempest Ale",
+    "description": " Ride the wave of flavor with Tangerine Tempest Ale, a refreshing brew with an ABV of 5.7%. Its tangerine orange color radiates with vibrancy. Aromatics of zesty tangerine and tropical hops transport the senses to sun-drenched shores, while its tangy citrus and tropical bliss invigorate the palate. Pair it with BBQ ribs or mango salsa for a taste of citrusy paradise.",
+    "abv": " 5.7%",
+    "color": "Tangerine Orange",
+    "aromatics": " Zesty Tangerine, Tropical Hops",
+    "flavor": " Tangy Citrus, Tropical Bliss",
+    "price": "4 USD",
+    "bestwith": "BBQ Ribs or Mango Salsa",
+    "photo": "./images/beerCover/tangerine.png"
+  },
+  {
+    "name": "Phoenix Fury IPA",
+    "description": " Rising from the ashes comes Phoenix Fury IPA, a fiery brew with an ABV of 7.5%. Its fiery orange hue symbolizes the phoenix's eternal flame. Aromas of citrus flames and pine resin ignite the senses, while its bold bitterness and resilient resurgence captivate the palate. Pair it with spicy chicken wings or fiery tacos for a taste of fiery rebirth.",
+    "abv": "  7.5%",
+    "color": " Fiery Orange",
+    "aromatics": " Citrus Flames, Pine Resin",
+    "flavor": "Bold Bitterness, Resilient Resurgencet",
+    "price": "3 USD",
+    "bestwith": "Spicy Chicken Wings or Fiery Tacos",
+    "photo": "./images/beerCover/phoenix.png"
+  },
+  {
+    "name": "Feywild Fern Ale",
+    "description": " From the depths of the Feywild comes Feywild Fern Ale, a mystical brew with an ABV of 5.2%. Its soft fern green color reflects the verdant magic of the forest. Aromatics of woodland moss and enchanted ferns transport the senses, while its earthy essence and fey delight captivate the palate. Pair it with wild mushroom risotto or herb-roasted chicken for a taste of mystical enchantment.",
+    "abv": "  5.2%",
+    "color": " Soft Fern Green",
+    "aromatics": "Woodland Moss, Enchanted Ferns",
+    "flavor": " Earthy Essence, Fey Delight",
+    "price": "3.5 USD",
+    "bestwith": "Wild Mushroom Risotto or Herb-roasted Chicken",
+    "photo": "./images/beerCover/feywild.png"
+  },
+  {
+    "name": "Mystic Moonlight Lager",
+    "description": " Bathed in the ethereal glow of moonlight, Mystic Moonlight Lager is a celestial brew with an ABV of 4.5%. Its pale moonlight color captures the essence of the night sky. Subtle aromatics of florals and whispering wheat dance on the senses, while its crisp clarity and lunar euphoria enchant the palate. Pair it with grilled fish tacos or citrus-infused salad for a taste of celestial serenity.",
+    "abv": "  4.5%",
+    "color": " Pale Moonlight",
+    "aromatics": " Subtle Florals, Whispering Wheat",
+    "flavor": " Crisp Clarity, Lunar Euphoria",
+    "price": "3.5 USD",
+    "bestwith": "Grilled Fish Tacos or Citrus-infused Salad",
+    "photo": "./images/beerCover/mystic.png"
+  },
+  {
+    "name": "Valkyrie's Valor Ale",
+    "description": "Brewed by valiant warriors in the halls of Valhalla, Valkyrie's Valor Ale is a tribute to courage with an ABV of 6.7%. Its golden amber color reflects the valor of the Valkyries. Aromas of floral meadows and noble courage inspire, while its valiant malt and victorious hops conquer the palate. Pair it with braised lamb shank or sharp cheddar cheese for a taste of heroic triumph.",
+    "abv": "  6.7%",
+    "color": "Golden Amber",
+    "aromatics": " Floral Meadows, Noble Courage",
+    "flavor": " Valiant Malt, Victorious Hops",
+    "price": "3.5 USD",
+    "bestwith": "Braised Lamb Shank or Sharp Cheddar Cheese",
+    "photo": "./images/beerCover/valkyrie.png"
+  },
+  {
+    "name": "Dwarven Forge Ale",
+    "description": " Forged deep within the mountain halls of the dwarves, Dwarven Forge Ale is a testament to craftsmanship with an ABV of 7.1%. Its deep copper color reflects the strength of the dwarven forge. Aromas of hearth smoke and rugged resilience beckon, while its robust craftsmanship and bold brotherhood unite the palate. Pair it with smoked bratwurst or sharp blue cheese for a taste of dwarven camaraderie.",
+    "abv": "  7.1%",
+    "color": " Deep Copper",
+    "aromatics": " Hearth Smoke, Rugged Resilience",
+    "flavor": "Robust Craftsmanship, Bold Brotherhood",
+    "price": "4.5 USD",
+    "bestwith": "Smoked Bratwurst or Sharp Blue Cheese",
+    "photo": "./images/beerCover/dwarven.png"
+  },
+  {
+    "name": "Frost Giant Frostbite Ale",
+    "description": " From the frozen lands of the north comes Frost Giant Frostbite Ale, a chilling brew with an ABV of 9.2%. Its icy blue color reflects the frozen wastelands where frost giants reign. Aromas of peppermint frost and frozen vanilla tantalize, while its glacial chill and bold bite send shivers down the spine. Pair it with rich chocolate truffles or roasted duck for a taste of icy grandeur.",
+    "abv": "  9.2%",
+    "color": "Icy Blue",
+    "aromatics": " Peppermint Frost, Frozen Vanilla",
+    "flavor": "Glacial Chill, Bold Bite",
+    "price": "6.5 USD",
+    "bestwith": "Rich Chocolate Truffles or Roasted Duck",
+    "photo": "./images/beerCover/frost.png"
+  },
+  {
+    "name": "Centaur's Charge Lager",
+    "description": " Inspired by the thundering hooves of the centaur, Centaur's Charge Lager is a spirited brew with an ABV of 4.8%. Its golden bronze color reflects the golden fields where centaurs roam. Aromas of noble hops and meadow grass entice, while its galloping crispness and floral flourish invigorate the palate. Pair it with grilled sausages or fresh garden salad for a taste of wild freedom.",
+    "abv": "   4.8%",
+    "color": "Golden Bronze",
+    "aromatics": " Noble Hops, Meadow Grass",
+    "flavor": "Galloping Crispness, Floral Flourish",
+    "price": "3.5 USD",
+    "bestwith": "Grilled Sausages or Fresh Garden Salad",
+    "photo": "./images/beerCover/centaur.png"
+  },
+  {
+    "name": "Goblin's Grin Ale",
+    "description": "Brewed in the hidden caves of the forest, Goblin's Grin Ale is a mischievous brew with an ABV of 5.0%. Its murky brown color hints at the secrets of the woodland realm. Aromas of foraged berries and wild herbs dance from the glass, while its mischievous spice and earthy mirth bring a smile to the lips. Pair it with rustic meat pies or forest foraged fare for a taste of woodland whimsy.",
+    "abv": "   5.0%",
+    "color": "Murky Brown",
+    "aromatics": " Foraged Berries, Wild Herbs",
+    "flavor": "Mischievous Spice, Earthy Mirth",
+    "price": "7 USD",
+    "bestwith": "Rustic Meat Pies or Forest Foraged Fare",
+    "photo": "./images/beerCover/goblin.png"
+  },
+  {
+    "name": "Mermaid's Melody",
+    "description": " From the depths of the ocean comes Mermaid's Melody, a refreshing brew with an ABV of 4.2%. Its aquamarine hue evokes the tranquil seas where mermaids dwell. Aromas of ocean breeze and tropical fruits lure you in, while its crisp waves and citrus symphony transport you to sun-kissed shores. Pair it with grilled shrimp skewers or seaside salads for a taste of maritime magic.",
+    "abv": "   5.0%",
+    "color": "Aquamarine",
+    "aromatics": " Ocean Breeze, Tropical Fruits",
+    "flavor": "Crisp Waves, Citrus Symphony",
+    "price": "5 USD",
+    "bestwith": "Crisp Waves, Citrus Symphony",
+    "photo": "./images/beerCover/mermaid.png"
+  },
+  {
+    "name": "Enchanted Elixir",
+    "description": " Brewed under the light of a shimmering moon, Enchanted Elixir is a mystical potion with an ABV of 5.5%. Its glowing amber color holds the secrets of ancient wizards. Infused with rare herbs and enchanted hops, it enchants the senses with mystical citrus and magical bitterness. Pair it with herb-crusted fish or fairy cakes for a truly enchanting experience.",
+    "abv": "   5.0%",
+    "color": "Glowing Amber",
+    "aromatics": " Rare Herbs, Enchanted Hops",
+    "flavor": " Mystical Citrus, Magical Bitterness",
+    "price": "4 USD",
+    "bestwith": "Herb-Crusted Fish or Fairy Cakes",
+    "photo": "./images/beerCover/enchanted.png"
+  }
+]
