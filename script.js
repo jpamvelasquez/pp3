@@ -1,5 +1,38 @@
 "use strict";
 
+document.addEventListener("DOMContentLoaded", function () {
+  let allBeers = document.querySelector(".beer-function");
+  let home = document.querySelector(".home-function");
+
+  home.addEventListener("click", homeSection);
+  allBeers.addEventListener("click", beerSection);
+});
+
+function homeSection(e) {
+  e.preventDefault();
+  toggleClass(".home-container");
+  toggleClass(".ourBeers", true);
+  toggleClass(".beer-fluid", true);
+}
+
+function beerSection(e) {
+  e.preventDefault();
+  carouselBeer();
+  ourBeer();
+  ourBrew();
+  toggleClass(".ourBeers");
+  toggleClass(".beer-fluid");
+  toggleClass(".home-container", true);
+}
+
+//Function to toggle
+function toggleClass(classSelector, show = false) {
+  const classes = document.querySelector(classSelector);
+  if (classes) {
+    classes.style.display = show ? "none" : "block";
+  }
+}
+
 //Our Beer Section
 function ourBeer() {
   let beer = new XMLHttpRequest();
@@ -18,7 +51,7 @@ function ourBeer() {
       });
   });
 }
-ourBeer();
+// ourBeer();
 
 //Displaying beer
 function displayBeer(data) {
@@ -92,3 +125,99 @@ function sortedBeer(data) {
   displayBeer(sortedData);
   modalBeer(sortedData);
 }
+
+function carouselBeer() {
+  const div = `<div class="col-md-12">
+  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner ">
+      <div class="carousel-item active ourbeer-carousel-1 " data-bs-interval="3000">
+        <div class="comment-text">
+         <div class="row">
+          <div class="col">
+            <h1>
+              Where Every Pour Tells a Tale of Passion.
+            </h1>
+          </div>
+         </div>
+        </div>
+      </div>
+      <div class="carousel-item ourbeer-carousel-2" data-bs-interval="2000">
+     
+        <div class="comment-text">
+          <div class="row">
+            <div class="col">
+              <h1>
+                The Man Behind the Brew: <br> Crafting Excellence, One Batch at a Time.
+              </h1>
+            </div>
+           </div>
+        </div>
+      </div>
+      <div class="carousel-item ourbeer-carousel-3">
+        <div class="comment-text">
+          <div class="row">
+            <div class="col">
+              <h1>
+                Where Every Sip Tells a Story.
+              </h1>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+  document.querySelector(".beer-fluid").innerHTML = div;
+}
+// carouselBeer();
+
+function ourBrew() {
+  let div = `
+  <div class="container-fluid pt-5">
+  <div class="container beer-featured">
+    <div class="row text-center">
+      <div class="col mb-5">
+        <div class="text-design">
+          <h2 class="beer-text">Our Brews</h2>
+          <p>Savor the Essence of Our Crafted Brews.</p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col d-flex selection">
+        <div class="sort-beer d-flex">
+          <h2  class="beer-tagline">Sort By</h2>
+          <select class="form-select sort-form" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="high">Price : High - Low </option>
+            <option value="low">Price : Low - High</option>
+            <option value="bestselling">Bestselling</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 g-4 pb-4 text-center beer-section">
+      <!-- <div class="col-md-6 col-lg-3">
+        <div class="card"> 
+          <div class="img-resize"  data-bs-toggle="modal" data-bs-target="#beerSection">
+          <img src="./images/beerCover/dragon.png" class="card-img-top" />
+          </div>
+          <div class="card-body">
+            <p class="card-title">Dragon's Draught</p>
+          </div>
+        </div>
+    </div> -->
+    </div>
+  </div>
+</div>`;
+  document.querySelector(".ourBeers").innerHTML = div;
+}
+
+// ourBrew();
