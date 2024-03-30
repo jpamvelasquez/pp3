@@ -6,9 +6,10 @@
     "color": "Deep Crimson",
     "aromatics": "Roasted Barley, Smoked Oak",
     "flavor": "Bold Roastiness, Fiery Hops",
-    "price": "5 USD",
+    "price": "5",
     "bestwith": "Hearty Beef Stew or Charred Meats",
-    "photo": "./images/beerCover/dragon.png"
+    "photo": "./images/beerCover/dragon.png",
+    "ratings": "4.6"
   },
   {
     "name": "Tangerine Tempest Ale",
@@ -17,9 +18,10 @@
     "color": "Tangerine Orange",
     "aromatics": " Zesty Tangerine, Tropical Hops",
     "flavor": " Tangy Citrus, Tropical Bliss",
-    "price": "4 USD",
+    "price": "4",
     "bestwith": "BBQ Ribs or Mango Salsa",
-    "photo": "./images/beerCover/tangerine.png"
+    "photo": "./images/beerCover/tangerine.png",
+    "ratings": "4.5"
   },
   {
     "name": "Phoenix Fury IPA",
@@ -28,9 +30,10 @@
     "color": " Fiery Orange",
     "aromatics": " Citrus Flames, Pine Resin",
     "flavor": "Bold Bitterness, Resilient Resurgencet",
-    "price": "3 USD",
+    "price": "3",
     "bestwith": "Spicy Chicken Wings or Fiery Tacos",
-    "photo": "./images/beerCover/phoenix.png"
+    "photo": "./images/beerCover/phoenix.png",
+    "ratings": "4.0"
   },
   {
     "name": "Feywild Fern Ale",
@@ -39,9 +42,10 @@
     "color": " Soft Fern Green",
     "aromatics": "Woodland Moss, Enchanted Ferns",
     "flavor": " Earthy Essence, Fey Delight",
-    "price": "3.5 USD",
+    "price": "3.5",
     "bestwith": "Wild Mushroom Risotto or Herb-roasted Chicken",
-    "photo": "./images/beerCover/feywild.png"
+    "photo": "./images/beerCover/feywild.png",
+    "ratings": "4.2"
   },
   {
     "name": "Mystic Moonlight Lager",
@@ -50,9 +54,10 @@
     "color": " Pale Moonlight",
     "aromatics": " Subtle Florals, Whispering Wheat",
     "flavor": " Crisp Clarity, Lunar Euphoria",
-    "price": "3.5 USD",
+    "price": "3.5",
     "bestwith": "Grilled Fish Tacos or Citrus-infused Salad",
-    "photo": "./images/beerCover/mystic.png"
+    "photo": "./images/beerCover/mystic.png",
+    "ratings": "4.0"
   },
   {
     "name": "Valkyrie's Valor Ale",
@@ -61,9 +66,10 @@
     "color": "Golden Amber",
     "aromatics": " Floral Meadows, Noble Courage",
     "flavor": " Valiant Malt, Victorious Hops",
-    "price": "3.5 USD",
+    "price": "3.5",
     "bestwith": "Braised Lamb Shank or Sharp Cheddar Cheese",
-    "photo": "./images/beerCover/valkyrie.png"
+    "photo": "./images/beerCover/valkyrie.png",
+    "ratings": "4.0"
   },
   {
     "name": "Dwarven Forge Ale",
@@ -72,9 +78,10 @@
     "color": " Deep Copper",
     "aromatics": " Hearth Smoke, Rugged Resilience",
     "flavor": "Robust Craftsmanship, Bold Brotherhood",
-    "price": "4.5 USD",
+    "price": "4.5",
     "bestwith": "Smoked Bratwurst or Sharp Blue Cheese",
-    "photo": "./images/beerCover/dwarven.png"
+    "photo": "./images/beerCover/dwarven.png",
+    "ratings": "4.5"
   },
   {
     "name": "Frost Giant Frostbite Ale",
@@ -83,9 +90,10 @@
     "color": "Icy Blue",
     "aromatics": " Peppermint Frost, Frozen Vanilla",
     "flavor": "Glacial Chill, Bold Bite",
-    "price": "6.5 USD",
+    "price": "6.5",
     "bestwith": "Rich Chocolate Truffles or Roasted Duck",
-    "photo": "./images/beerCover/frost.png"
+    "photo": "./images/beerCover/frost.png",
+    "ratings": "4.4"
   },
   {
     "name": "Centaur's Charge Lager",
@@ -94,9 +102,10 @@
     "color": "Golden Bronze",
     "aromatics": " Noble Hops, Meadow Grass",
     "flavor": "Galloping Crispness, Floral Flourish",
-    "price": "3.5 USD",
+    "price": "3.5",
     "bestwith": "Grilled Sausages or Fresh Garden Salad",
-    "photo": "./images/beerCover/centaur.png"
+    "photo": "./images/beerCover/centaur.png",
+    "ratings": "4.1"
   },
   {
     "name": "Goblin's Grin Ale",
@@ -105,9 +114,10 @@
     "color": "Murky Brown",
     "aromatics": " Foraged Berries, Wild Herbs",
     "flavor": "Mischievous Spice, Earthy Mirth",
-    "price": "7 USD",
+    "price": "7",
     "bestwith": "Rustic Meat Pies or Forest Foraged Fare",
-    "photo": "./images/beerCover/goblin.png"
+    "photo": "./images/beerCover/goblin.png",
+    "ratings": "4.8"
   },
   {
     "name": "Mermaid's Melody",
@@ -116,9 +126,10 @@
     "color": "Aquamarine",
     "aromatics": " Ocean Breeze, Tropical Fruits",
     "flavor": "Crisp Waves, Citrus Symphony",
-    "price": "5 USD",
+    "price": "5",
     "bestwith": "Crisp Waves, Citrus Symphony",
-    "photo": "./images/beerCover/mermaid.png"
+    "photo": "./images/beerCover/mermaid.png",
+    "ratings": "4.8"
   },
   {
     "name": "Enchanted Elixir",
@@ -127,8 +138,9 @@
     "color": "Glowing Amber",
     "aromatics": " Rare Herbs, Enchanted Hops",
     "flavor": " Mystical Citrus, Magical Bitterness",
-    "price": "4 USD",
+    "price": "4",
     "bestwith": "Herb-Crusted Fish or Fairy Cakes",
-    "photo": "./images/beerCover/enchanted.png"
+    "photo": "./images/beerCover/enchanted.png",
+    "ratings": "4.7"
   }
 ]

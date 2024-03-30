@@ -72,13 +72,13 @@
                   >
                 </li>
                 <li class="nav-item me-3">
-                  <a class="nav-link link-trans" href="#">Menus</a>
+                  <a class="nav-link link-trans" href="#">About</a>
                 </li>
                 <li class="nav-item me-3">
                   <a class="nav-link link-trans" href="#">Our beers</a>
                 </li>
                 <li class="nav-item me-3">
-                  <a class="nav-link link-trans" href="#">About</a>
+                  <a class="nav-link link-trans" href="#">Menus</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link link-trans" href="#">Contact</a>
@@ -105,6 +105,77 @@
     </div>
  <!-- End of Navbar -->
 
+<!-- Our Beer Section - Carousel -->
+
+  <div class="container-fluid beer-fluid">
+      <div class="col-md-12">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner ">
+            <div class="carousel-item active ourbeer-carousel-1 " data-bs-interval="3000">
+              <div class="icon text-center">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="comment-text">
+                <p>From the seamless booking process to the unforgettable adventures, this travel agency exceeded all expectations. Their attention to detail and personalized recommendations truly made our trip a dream come true.</p>
+                <div class="client-img">
+                  <img src="./images/3.png">
+                </div>
+                <h4 class="text-center">Harry Cameron</h4>
+                <h6 class="text-center">Film Producer</h6>
+              </div>
+            </div>
+            <div class="carousel-item ourbeer-carousel-2" data-bs-interval="2000">
+              <div class="icon text-center">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="comment-text">
+                <p>Their expertise and personalized recommendations made our journey unforgettable. From the moment we contacted them, their team was incredibly attentive and knowledgeable.</p>
+                <div class="client-img">
+                  <img src="./images/4.png">
+                </div>
+                <h4>Celia St. James</h4>
+                <h6>Actress</h6>
+              </div>
+            </div>
+            <div class="carousel-item ourbeer-carousel-3">
+              <div class="icon text-center">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="comment-text">
+                <p>Their attention to detail and personalized approach made our trip unforgettable. From the moment we booked until we returned home. We can't wait to embark on our next adventure with them!</p>
+                <div class="client-img">
+                  <img src="./images/5.png">
+                </div>
+                <h4>Evelyn Hugo</h4>
+                <h6>Actress</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+<!-- End OF Beer Section Carousel -->
+
+
 <!-- Our BEER SECTION -->
   <section class="ourBeers">
     <div class="container-fluid pt-5">
@@ -114,12 +185,21 @@
             <h2 class="beer-text">Our Beer</h2>
           </div>
         </div>
-        <div class="row d-flex">
-          <h2 class="beer-tagline">Our Finest Beers</h2>
-          <div class="sort-beer"><h2>Sort By</h2></div>
+        <div class="row">
+          <div class="col d-flex selection">
+            <div class="sort-beer d-flex">
+              <h2  class="beer-tagline">Sort By</h2>
+              <select class="form-select sort-form" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="high">Price : High - Low </option>
+                <option value="low">Price : Low - High</option>
+                <option value="bestselling">Bestselling</option>
+              </select>
+            </div>
+          </div>
         </div>
         <div class="row row-cols-1 row-cols-md-4 g-4 pb-4 text-center beer-section">
-          <div class="col-md-6 col-lg-3">
+          <!-- <div class="col-md-6 col-lg-3">
             <div class="card"> 
               <div class="img-resize"  data-bs-toggle="modal" data-bs-target="#beerSection">
               <img src="./images/beerCover/dragon.png" class="card-img-top" />
@@ -128,7 +208,7 @@
                 <p class="card-title">Dragon's Draught</p>
               </div>
             </div>
-        </div>
+        </div> -->
         </div>
       </div>
     </div>
@@ -168,9 +248,9 @@
                 <h3>LINKS</h3>
                 <ul class="service">
                   <li><a href="#" class="link-trans">Home</a></li>
-                  <li><a href="#" class="link-trans">Menus</a></li>
-                  <li><a href="#" class="link-trans">Our Beers</a></li>
                   <li><a href="#" class="link-trans">About</a></li>
+                  <li><a href="#" class="link-trans">Our Beers</a></li>
+                  <li><a href="#" class="link-trans">Menus</a></li>
                   <li><a href="#" class="link-trans">Contact</a></li>
                 </ul>
             </div>

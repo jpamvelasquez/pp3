@@ -173,11 +173,11 @@ form button {
   max-width: 90rem;
 }
 
-.img-resize {
+.img-resizes {
   height: 50rem;
   text-align: center;
 }
-.img-resize img {
+.img-resizes img {
   height: 100%;
 }
 
@@ -205,6 +205,76 @@ form button {
 }
 
 /* sort */
+
+.selection {
+  justify-content: flex-end;
+  text-align: center;
+  height: 4rem;
+}
+.sort-beer {
+  width: 30rem;
+}
 .beer-tagline {
-  display: inline-block;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+.form-select {
+  font-size: 1.5rem;
+  width: 50rem;
+  /* border: 1px solid black; */
+  height: 3.5rem;
+  outline: none !important;
+  box-shadow: none;
+}
+.form-select:focus {
+  outline: none !important;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  border: 2px solid #e6b908;
+}
+
+/* our beer carousel */
+
+.ourbeer-carousel-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    url("./images/heroCovers/4.png");
+  height: 100%;
+  background-position-x: left;
+  background-repeat: no-repeat;
+}
+
+.ourbeer-carousel-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    url("./images/heroCovers/2.png");
+  height: 100%;
+
+  background-repeat: no-repeat;
+}
+
+.ourbeer-carousel-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    url("./images/heroCovers/1.png");
+  height: 100%;
+
+  background-repeat: no-repeat;
+}
+
+.carousel-inner {
+  height: 70rem;
+}
+.carousel-indicators [data-bs-target] {
+  width: 2rem;
+  height: 2rem;
+  background-color: #d5f1ea;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+
+.beer-fluid {
+  padding-right: 0;
+  padding-left: 0;
 }

@@ -9,29 +9,38 @@ function ourBeer() {
     let beerData = JSON.parse(this.responseText);
     console.log(beerData);
 
-    let divs = "";
-
-    for (const keys of Object.keys(beerData)) {
-      divs += `   <div class="col-md-6 col-lg-3">
-                <div class="card">
-                    
-                    <div class="img-resize" data-bs-toggle="modal" data-bs-target="#beerSection-${keys}">
-                    <img src="${beerData[keys].photo}" class="card-img-top" />
-                    </div>
-                    <div class="card-body">
-                    <p class="card-title">${beerData[keys].name}</p>
-                    </div>
-                </div>
-            </div>`;
-    }
-    document.querySelector(".beer-section").innerHTML = divs;
+    displayBeer(beerData);
     modalBeer(beerData);
+    document
+      .querySelector(".sort-form")
+      .addEventListener("change", function () {
+        sortedBeer(beerData);
+      });
   });
 }
 ourBeer();
 
-// Modal
+//Displaying beer
+function displayBeer(data) {
+  let divs = "";
 
+  for (const keys of Object.keys(data)) {
+    divs += `   <div class="col-md-6 col-lg-3">
+              <div class="card">
+                  
+                  <div class="img-resize" data-bs-toggle="modal" data-bs-target="#beerSection-${keys}">
+                  <img src="${data[keys].photo}" class="card-img-top" />
+                  </div>
+                  <div class="card-body">
+                  <p class="card-title">${data[keys].name}</p>
+                  </div>
+              </div>
+          </div>`;
+  }
+  document.querySelector(".beer-section").innerHTML = divs;
+}
+
+// Modal
 function modalBeer(data) {
   let divs = "";
   for (const keys of Object.keys(data)) {
@@ -45,10 +54,10 @@ function modalBeer(data) {
             <div class="modal-body">
               <div class="row">
                 <div class="col-md-5 text-center">
-                  <div class="img-resize">
+                  <div class="img-resizes">
                   <img src="${data[keys].photo}" />
                 </div>
-                <p class="fw-bold">Price :<span class="fw-normal"> ${data[keys].price}</span> </p>
+                <p class="fw-bold">Price :<span class="fw-normal"> ${data[keys].price} USD </span> </p>
                 </div>
                 <div class="col-md-7 beer-description mt-4">
                   <p class="text-center fs-1">${data[keys].name}</p>
@@ -67,4 +76,19 @@ function modalBeer(data) {
   }
   document.querySelector(".beer-modal").innerHTML = divs;
 }
-modalBeer();
+
+//Sort by
+function sortedBeer(data) {
+  const sorted = document.querySelector(".sort-form").value;
+  console.log(data);
+  let sortedData;
+  if (sorted === "high") {
+    sortedData = Object.values(data).sort((a, b) => b.price - a.price);
+  } else if (sorted === "low") {
+    sortedData = Object.values(data).sort((a, b) => a.price - b.price);
+  } else if (sorted === "bestselling") {
+    sortedData = Object.values(data).sort((a, b) => b.ratings - a.ratings);
+  }
+  displayBeer(sortedData);
+  modalBeer(sortedData);
+}
