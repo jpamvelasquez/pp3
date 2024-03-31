@@ -37,17 +37,17 @@ body {
 
 .btn-search:hover {
   background-color: rgb(114, 97, 29);
-  color: whitesmoke;
 }
 .btn-search:active {
   background-color: rgb(124, 130, 75) !important;
   outline: none !important;
+  color: black;
 }
 .btn-search:focus {
   outline: none !important;
   box-shadow: 0 0 5px rgba(30, 27, 14, 0.5);
   border: none;
-  color: #e6b908;
+  color: white;
 }
 
 .navbar-toggler-icon {
@@ -184,9 +184,12 @@ form button {
 .beer-description {
   padding-right: 3rem;
   font-weight: bold;
+  font-size: 1.7rem;
+  margin-top: 4rem !important;
 }
 .beer-description span {
   font-weight: normal;
+  font-size: 1.7rem;
 }
 .modal-header {
   justify-content: space-between;
@@ -202,6 +205,38 @@ form button {
 
 .card {
   border: none;
+}
+
+.img-resize {
+  width: 100%;
+  overflow: hidden;
+}
+.card:hover .img-resize img {
+  transform: scale(1.2) !important;
+}
+
+.card-img-top {
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.hero-beer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
+    url("./images/heroCovers/4.png");
+  height: 70rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-beer h1 {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: white;
+  font-size: 4.5rem;
+  font-family: "Varela Round";
+  font-weight: 700;
 }
 
 /* sort */
@@ -238,7 +273,7 @@ form button {
 
 /* our beer carousel */
 
-.ourbeer-carousel-1 {
+/* .ourbeer-carousel-1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
     url("./images/heroCovers/4.png");
   height: 100%;
@@ -307,7 +342,7 @@ form button {
 .ourbeer-carousel-3 .comment-text .row .col h1 {
   font-size: 5rem;
   font-family: "Varela Round";
-}
+} */
 
 .carousel-inner {
   height: 70rem;
@@ -328,7 +363,8 @@ form button {
 
 .beer-text {
   font-size: 5rem;
-  opacity: 0.3;
+  color: #979530;
+  opacity: 0.9;
 }
 
 .text-design {
@@ -345,6 +381,10 @@ form button {
 
 /* HOME SECTION */
 
+.home-container {
+  padding-right: 0;
+  padding-left: 0;
+}
 .home-carousel-1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
     url("./images/heroCovers/5.png");
@@ -441,4 +481,47 @@ form button {
 }
 hr {
   border: 2px solid rgb(67, 68, 6);
+}
+
+/* Search Css */
+.directories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-directories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.card-state-text {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+.brew-text {
+  font-size: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+.card-link {
+  text-decoration: none;
+  color: black;
+}
+.hrs {
+  border: 3px solid rgb(23, 12, 12);
+}
+
+.link-site {
+  color: #ab5c12;
+  font-weight: 600;
 }

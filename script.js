@@ -3,28 +3,58 @@
 document.addEventListener("DOMContentLoaded", function () {
   let allBeers = document.querySelector(".beer-function");
   let home = document.querySelector(".home-function");
+  let search = document.querySelector(".search-function");
+  let menu = document.querySelector(".menu-function");
+  let contact = document.querySelector(".contact-function");
 
   home.addEventListener("click", homeSection);
   allBeers.addEventListener("click", beerSection);
+  menu.addEventListener("click", menuSection);
+  search.addEventListener("click", searchSection);
 });
 
 function homeSection(e) {
   e.preventDefault();
+
   toggleClass(".home-container");
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
+  toggleClass(".menu-container", true);
+  toggleClass(".search-section", true);
 }
 
 function beerSection(e) {
   e.preventDefault();
-  carouselBeer();
   ourBeer();
   ourBrew();
   toggleClass(".ourBeers");
   toggleClass(".beer-fluid");
   toggleClass(".home-container", true);
+  toggleClass(".menu-container", true);
+  toggleClass(".search-section", true);
 }
 
+function menuSection(e) {
+  e.preventDefault();
+
+  toggleClass(".menu-container");
+  toggleClass(".home-container", true);
+  toggleClass(".ourBeers", true);
+  toggleClass(".beer-fluid", true);
+  toggleClass(".search-container", true);
+}
+
+function searchSection(e) {
+  e.preventDefault();
+  onlineBeerApi();
+  // searchContainer();
+
+  toggleClass(".search-container");
+  toggleClass(".menu-container", true);
+  toggleClass(".home-container", true);
+  toggleClass(".ourBeers", true);
+  toggleClass(".beer-fluid", true);
+}
 //Function to toggle
 function toggleClass(classSelector, show = false) {
   const classes = document.querySelector(classSelector);
@@ -126,60 +156,12 @@ function sortedBeer(data) {
   modalBeer(sortedData);
 }
 
-function carouselBeer() {
-  const div = `<div class="col-md-12">
-  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner ">
-      <div class="carousel-item active ourbeer-carousel-1 " data-bs-interval="3000">
-        <div class="comment-text">
-         <div class="row">
-          <div class="col">
-            <h1>
-              Where Every Pour Tells a Tale of Passion.
-            </h1>
-          </div>
-         </div>
-        </div>
-      </div>
-      <div class="carousel-item ourbeer-carousel-2" data-bs-interval="2000">
-     
-        <div class="comment-text">
-          <div class="row">
-            <div class="col">
-              <h1>
-                The Man Behind the Brew: <br> Crafting Excellence, One Batch at a Time.
-              </h1>
-            </div>
-           </div>
-        </div>
-      </div>
-      <div class="carousel-item ourbeer-carousel-3">
-        <div class="comment-text">
-          <div class="row">
-            <div class="col">
-              <h1>
-                Where Every Sip Tells a Story.
-              </h1>
-            </div>
-           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`;
-
-  document.querySelector(".beer-fluid").innerHTML = div;
-}
-// carouselBeer();
-
 function ourBrew() {
   let div = `
-  <div class="container-fluid pt-5">
+  <div class="container-fluid beer-fluid">
+  <div class='hero-beer'>
+  <h1>Where Every Sip Unfolds a Story</h1>
+  </div>
   <div class="container beer-featured">
     <div class="row text-center">
       <div class="col mb-5">
@@ -190,7 +172,7 @@ function ourBrew() {
         
       </div>
     </div>
-    <div class="row mt-4">
+    <div class="row mt-3">
       <div class="col d-flex selection">
         <div class="sort-beer d-flex">
           <h2  class="beer-tagline">Sort By</h2>
@@ -204,16 +186,7 @@ function ourBrew() {
       </div>
     </div>
     <div class="row row-cols-1 row-cols-md-4 g-4 pb-4 text-center beer-section">
-      <!-- <div class="col-md-6 col-lg-3">
-        <div class="card"> 
-          <div class="img-resize"  data-bs-toggle="modal" data-bs-target="#beerSection">
-          <img src="./images/beerCover/dragon.png" class="card-img-top" />
-          </div>
-          <div class="card-body">
-            <p class="card-title">Dragon's Draught</p>
-          </div>
-        </div>
-    </div> -->
+    
     </div>
   </div>
 </div>`;
@@ -221,3 +194,84 @@ function ourBrew() {
 }
 
 // ourBrew();
+
+//Online API Calling
+
+function onlineBeerApi() {
+  let state = document.querySelector(".state-form").value.trim();
+
+  if (state === "" || !isNaN(state)) {
+    alert("Invalid Input. Please enter a state");
+    window.location.href = "index.html";
+    return;
+  }
+  let beerApi = new XMLHttpRequest();
+
+  beerApi.open(
+    "GET",
+    `https://api.openbrewerydb.org/v1/breweries?by_state=${state}&per_page=12`
+  );
+  beerApi.send();
+
+  beerApi.addEventListener("load", function () {
+    const beerOnlineApi = JSON.parse(this.responseText);
+    console.log(beerOnlineApi);
+
+    if (beerOnlineApi.length === 0) {
+      // No breweries found for the provided state
+      alert("No breweries found for the provided state.");
+      window.location.href = "index.html";
+      return;
+    }
+
+    console.log(name);
+    let divs = "";
+
+    for (const keys of Object.keys(beerOnlineApi)) {
+      divs += `
+      <div class="col-md-6 col-lg-3 card-directories">
+        <div class="card" style="width: 30rem; height :20rem">
+          <div class="card-body">
+          <div class='card-state-text'>
+            <h5 class="card-title">${beerOnlineApi[keys].name}</h5>
+            </div>
+            <hr class="hrs">
+            <p class="card-text">City : ${beerOnlineApi[keys].city}</p>
+            <p class="card-text">Street : ${beerOnlineApi[keys].street}</p>
+            <p class="card-text">Phone : ${beerOnlineApi[keys].phone}</p>
+            <a href="${
+              beerOnlineApi[keys].website_url || "#"
+            }" target="_blank" class="card-link">${
+        beerOnlineApi[keys].website_url ? "Website" : "Website"
+      } : <span class='link-site'>${
+        beerOnlineApi[keys].website_url || "Not Available"
+      }</span></a>
+            </div>
+          </div>
+        </div>
+    </div>`;
+    }
+    searchContainer();
+    let stateText = state[0].toUpperCase() + state.slice(1).toLowerCase();
+
+    document.querySelector(
+      ".brew-text"
+    ).innerText = `${stateText} Brewery Guide`;
+    document.querySelector(".directories").innerHTML = divs;
+    document.querySelector(".state-form").value = "";
+  });
+}
+
+function searchContainer() {
+  let div = `<div class="container">
+  <div class="search-by-state">
+    <h2 class="text-center brew-text">Texas Brewery Guide</h2>
+    <div class="display-directories">
+    <div class="row row-cols-1 row-cols-md-4 g-4 pb-4 directories">
+    </div>
+    </div>
+    <hr>    
+  </div>
+</div> `;
+  document.querySelector(".search-section").innerHTML = div;
+}
