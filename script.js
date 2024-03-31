@@ -8,11 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let contact = document.querySelector(".contact-function");
   let keyEnter = document.querySelector(".state-form");
 
+  console.log("DOMContentLoaded event fired");
+
   home.addEventListener("click", homeSection);
   allBeers.addEventListener("click", beerSection);
   menu.addEventListener("click", menuSection);
   search.addEventListener("click", searchSection);
   keyEnter.addEventListener("keypress", handleKeyEnter);
+
+  console.log("Event listeners attached");
 });
 
 function homeSection(e) {
@@ -43,7 +47,7 @@ function menuSection(e) {
   toggleClass(".home-container", true);
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
-  toggleClass(".search-container", true);
+  toggleClass(".search-section", true);
 }
 
 function searchSection(e) {
@@ -51,11 +55,25 @@ function searchSection(e) {
   onlineBeerApi();
   // searchContainer();
 
-  toggleClass(".search-container");
+  toggleClass(".search-section");
   toggleClass(".menu-container", true);
   toggleClass(".home-container", true);
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
+}
+
+function handleKeyEnter(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+
+    onlineBeerApi();
+
+    toggleClass(".search-section");
+    toggleClass(".menu-container", true);
+    toggleClass(".home-container", true);
+    toggleClass(".ourBeers", true);
+    toggleClass(".beer-fluid", true);
+  }
 }
 //Function to toggle
 function toggleClass(classSelector, show = false) {
@@ -228,11 +246,10 @@ function onlineBeerApi() {
       return;
     }
 
-    console.log(name);
-    let divs = "";
+    let html = "";
 
     for (const keys of Object.keys(beerOnlineApi)) {
-      divs += `
+      html += `
       <div class="col-md-6 col-lg-3 card-directories">
         <div class="card" style="width: 30rem; height :20rem">
           <div class="card-body">
@@ -255,14 +272,16 @@ function onlineBeerApi() {
         </div>
     </div>`;
     }
+
     searchContainer();
     let stateText = state[0].toUpperCase() + state.slice(1).toLowerCase();
 
     document.querySelector(
       ".brew-text"
     ).innerText = `${stateText} Brewery Guide`;
-    document.querySelector(".directories").innerHTML = divs;
+    document.querySelector(".directories").innerHTML = html;
     document.querySelector(".state-form").value = "";
+    console.log("working api");
   });
 }
 
@@ -278,18 +297,4 @@ function searchContainer() {
   </div>
 </div> `;
   document.querySelector(".search-section").innerHTML = div;
-}
-
-function handleKeyEnter(e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-
-    onlineBeerApi();
-
-    toggleClass(".search-container");
-    toggleClass(".menu-container", true);
-    toggleClass(".home-container", true);
-    toggleClass(".ourBeers", true);
-    toggleClass(".beer-fluid", true);
-  }
 }
