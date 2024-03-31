@@ -17,7 +17,7 @@ body {
   background-color: #e3e3da;
 }
 .logo {
-  height: 8rem;
+  height: 7rem;
 }
 
 /* search-input */
@@ -395,7 +395,7 @@ form button {
 
 .home-carousel-1 .comment-text {
   height: 100%;
-  color: rgb(234, 198, 184);
+  color: whitesmoke;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -404,8 +404,9 @@ form button {
   align-items: center;
 }
 .home-carousel-1 .comment-text .row .col h1 {
-  font-size: 5rem;
+  font-size: 6rem;
   font-family: "Varela Round";
+  font-weight: 700;
 }
 
 .home-carousel-2 {
@@ -418,7 +419,7 @@ form button {
 
 .home-carousel-2 .comment-text {
   height: 100%;
-  color: rgb(234, 198, 184);
+  color: whitesmoke;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -427,8 +428,9 @@ form button {
   align-items: center;
 }
 .home-carousel-2 .comment-text .row .col h1 {
-  font-size: 5rem;
+  font-size: 6rem;
   font-family: "Varela Round";
+  font-weight: 700;
 }
 
 .home-carousel-3 {
@@ -441,7 +443,7 @@ form button {
 
 .home-carousel-3 .comment-text {
   height: 100%;
-  color: rgb(234, 198, 184);
+  color: whitesmoke;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -450,8 +452,9 @@ form button {
   align-items: center;
 }
 .home-carousel-3 .comment-text .row .col h1 {
-  font-size: 5rem;
+  font-size: 6rem;
   font-family: "Varela Round";
+  font-weight: 700;
 }
 
 .home-img {

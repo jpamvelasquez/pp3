@@ -6,11 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let search = document.querySelector(".search-function");
   let menu = document.querySelector(".menu-function");
   let contact = document.querySelector(".contact-function");
+  let keyEnter = document.querySelector(".state-form");
 
   home.addEventListener("click", homeSection);
   allBeers.addEventListener("click", beerSection);
   menu.addEventListener("click", menuSection);
   search.addEventListener("click", searchSection);
+  keyEnter.addEventListener("keypress", handleKeyEnter);
 });
 
 function homeSection(e) {
@@ -202,6 +204,7 @@ function onlineBeerApi() {
 
   if (state === "" || !isNaN(state)) {
     alert("Invalid Input. Please enter a state");
+    toggleClass(".footer-section", true);
     window.location.href = "index.html";
     return;
   }
@@ -220,6 +223,7 @@ function onlineBeerApi() {
     if (beerOnlineApi.length === 0) {
       // No breweries found for the provided state
       alert("No breweries found for the provided state.");
+      toggleClass(".footer-section", true);
       window.location.href = "index.html";
       return;
     }
@@ -274,4 +278,18 @@ function searchContainer() {
   </div>
 </div> `;
   document.querySelector(".search-section").innerHTML = div;
+}
+
+function handleKeyEnter(e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+
+    onlineBeerApi();
+
+    toggleClass(".search-container");
+    toggleClass(".menu-container", true);
+    toggleClass(".home-container", true);
+    toggleClass(".ourBeers", true);
+    toggleClass(".beer-fluid", true);
+  }
 }
