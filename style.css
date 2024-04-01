@@ -375,8 +375,10 @@ form button {
   position: absolute;
   /* 
   border: 1px solid black; */
-  margin-top: -2.6rem;
+  margin-top: -1rem;
   margin-left: 50%;
+  line-height: 1;
+  font-size: 1.7rem;
 }
 
 /* HOME SECTION */
@@ -437,8 +439,9 @@ form button {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
     url("./images/heroCovers/6.png");
   height: 100%;
-  background-position-x: left;
+  background-position-x: center;
   background-repeat: no-repeat;
+  background-size: auto;
 }
 
 .home-carousel-3 .comment-text {
@@ -525,6 +528,10 @@ hr {
 }
 
 .link-site {
-  color: #ab5c12;
+  color: #5b79da;
   font-weight: 600;
+}
+
+.not-avail {
+  color: rgb(219, 55, 55);
 }

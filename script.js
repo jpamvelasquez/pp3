@@ -22,7 +22,7 @@ function homeSection(e) {
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
   toggleClass(".menu-container", true);
-  toggleClass(".search-section", true);
+  toggleClass(".search-container", true);
 }
 
 function beerSection(e) {
@@ -33,7 +33,7 @@ function beerSection(e) {
   toggleClass(".beer-fluid");
   toggleClass(".home-container", true);
   toggleClass(".menu-container", true);
-  toggleClass(".search-section", true);
+  toggleClass(".search-container", true);
 }
 
 function menuSection(e) {
@@ -187,7 +187,7 @@ function ourBrew() {
         </div>
       </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-4 g-4 pb-4 text-center beer-section">
+    <div class="row row-cols-1 row-cols-md-4 g-5 pb-4 text-center beer-section">
     
     </div>
   </div>
@@ -197,13 +197,66 @@ function ourBrew() {
 
 // ourBrew();
 
+//State abbreviations if user input abbreviations
+const stateAbbreviations = {
+  AL: "Alabama",
+  AK: "Alaska",
+  AZ: "Arizona",
+  AR: "Arkansas",
+  CA: "California",
+  CO: "Colorado",
+  CT: "Connecticut",
+  DE: "Delaware",
+  FL: "Florida",
+  GA: "Georgia",
+  HI: "Hawaii",
+  ID: "Idaho",
+  IL: "Illinois",
+  IN: "Indiana",
+  IA: "Iowa",
+  KS: "Kansas",
+  KY: "Kentucky",
+  LA: "Louisiana",
+  ME: "Maine",
+  MD: "Maryland",
+  MA: "Massachusetts",
+  MI: "Michigan",
+  MN: "Minnesota",
+  MS: "Mississippi",
+  MO: "Missouri",
+  MT: "Montana",
+  NE: "Nebraska",
+  NV: "Nevada",
+  NH: "New Hampshire",
+  NJ: "New Jersey",
+  NM: "New Mexico",
+  NY: "New York",
+  NC: "North Carolina",
+  ND: "North Dakota",
+  OH: "Ohio",
+  OK: "Oklahoma",
+  OR: "Oregon",
+  PA: "Pennsylvania",
+  RI: "Rhode Island",
+  SC: "South Carolina",
+  SD: "South Dakota",
+  TN: "Tennessee",
+  TX: "Texas",
+  UT: "Utah",
+  VT: "Vermont",
+  VA: "Virginia",
+  WA: "Washington",
+  WV: "West Virginia",
+  WI: "Wisconsin",
+  WY: "Wyoming",
+};
+
 //Online API Calling
-
 function onlineBeerApi() {
-  let state = document.querySelector(".state-form").value.trim();
+  let state = document.querySelector(".state-form").value.trim().toUpperCase();
 
-  if (state === "" || !isNaN(state)) {
-    alert("Invalid Input. Please enter a state");
+  if (state === "" || !isNaN(state) || state.length <= 3) {
+    alert("Invalid Input. Please enter a state.");
     toggleClass(".footer-section", true);
     window.location.href = "index.html";
     return;
@@ -228,10 +281,18 @@ function onlineBeerApi() {
       return;
     }
 
-    console.log(name);
     let divs = "";
 
     for (const keys of Object.keys(beerOnlineApi)) {
+      const websiteUrl = beerOnlineApi[keys].website_url;
+      const domainOnly =
+        websiteUrl &&
+        (websiteUrl.startsWith("https://") ||
+          websiteUrl.startsWith("http://") ||
+          websiteUrl.startsWith("www."))
+          ? websiteUrl.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "")
+          : websiteUrl;
+
       divs += `
       <div class="col-md-6 col-lg-3 card-directories">
         <div class="card" style="width: 30rem; height :20rem">
@@ -240,16 +301,28 @@ function onlineBeerApi() {
             <h5 class="card-title">${beerOnlineApi[keys].name}</h5>
             </div>
             <hr class="hrs">
-            <p class="card-text">City : ${beerOnlineApi[keys].city}</p>
-            <p class="card-text">Street : ${beerOnlineApi[keys].street}</p>
-            <p class="card-text">Phone : ${beerOnlineApi[keys].phone}</p>
+            <p class="card-text">City : ${
+              beerOnlineApi[keys].city
+                ? beerOnlineApi[keys].city
+                : "<span class='not-avail'>Not Available</span>"
+            }</p>
+            <p class="card-text">Street : ${
+              beerOnlineApi[keys].street
+                ? beerOnlineApi[keys].street
+                : "<span class='not-avail'>Not Available</span>"
+            }</p>
+            <p class="card-text">Phone : ${
+              beerOnlineApi[keys].phone
+                ? beerOnlineApi[keys].phone
+                : "<span class='not-avail>Not Available</span>"
+            }</p>
             <a href="${
               beerOnlineApi[keys].website_url || "#"
-            }" target="_blank" class="card-link">${
-        beerOnlineApi[keys].website_url ? "Website" : "Website"
-      } : <span class='link-site'>${
-        beerOnlineApi[keys].website_url || "Not Available"
-      }</span></a>
+            }" target="_blank" class="card-link"> Website : ${
+        beerOnlineApi[keys].website_url
+          ? `<span class='link-site'>${domainOnly}</span>`
+          : "<span class='not-avail'>Not Available </span>"
+      }</a>
             </div>
           </div>
         </div>
