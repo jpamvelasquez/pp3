@@ -170,7 +170,10 @@ function sortedBeer(data) {
   } else if (sorted === "low") {
     sortedData = Object.values(data).sort((a, b) => a.price - b.price);
   } else if (sorted === "bestselling") {
-    sortedData = Object.values(data).sort((a, b) => b.ratings - a.ratings);
+    // sortedData = Object.values(data).sort((a, b) => b.ratings - a.ratings);
+    sortedData = Object.values(data)
+      .filter((item) => item.ratings >= 4.2)
+      .sort((a, b) => b.ratings - a.ratings);
   }
   displayBeer(sortedData);
   modalBeer(sortedData);
