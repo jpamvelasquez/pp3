@@ -26,7 +26,7 @@ function homeSection(e) {
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
   toggleClass(".menu-container", true);
-  toggleClass(".search-container", true);
+  toggleClass(".search-section", true);
 }
 
 function beerSection(e) {
@@ -37,7 +37,7 @@ function beerSection(e) {
   toggleClass(".beer-fluid");
   toggleClass(".home-container", true);
   toggleClass(".menu-container", true);
-  toggleClass(".search-container", true);
+  toggleClass(".search-section", true);
 }
 
 function menuSection(e) {
@@ -353,7 +353,7 @@ function onlineBeerApi() {
     document.querySelector(
       ".brew-text"
     ).innerText = `${stateText} Brewery Guide`;
-    document.querySelector(".directories").innerHTML = html;
+    document.querySelector(".directories").innerHTML = divs;
     document.querySelector(".state-form").value = "";
     console.log("working api");
   });
