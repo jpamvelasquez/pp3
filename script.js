@@ -44,6 +44,10 @@ function menuSection(e) {
   e.preventDefault();
 
   toggleClass(".menu-container");
+
+  menuHeading();
+  // menuContainer();
+  // mainCourseOnly();
   toggleClass(".home-container", true);
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
@@ -192,7 +196,6 @@ function ourBrew() {
           <h2 class="beer-text">Our Brews</h2>
           <p>Savor the Essence of Our Crafted Brews.</p>
         </div>
-        
       </div>
     </div>
     <div class="row mt-3">
@@ -203,7 +206,7 @@ function ourBrew() {
             <option selected>Open this select menu</option>
             <option value="high">Price : High - Low </option>
             <option value="low">Price : Low - High</option>
-            <option value="bestselling">Bestselling</option>
+            <option value="bestselling">Highly rated brews</option>
           </select>
         </div>
       </div>
@@ -212,6 +215,7 @@ function ourBrew() {
     
     </div>
   </div>
+  <h2 class="text-advice">Experience our brews firsthand and savor the taste of excellence</h2>
 </div>`;
   document.querySelector(".ourBeers").innerHTML = div;
 }
@@ -374,4 +378,124 @@ function searchContainer() {
   </div>
 </div> `;
   document.querySelector(".search-section").innerHTML = div;
+}
+
+//MENU FUNCTIONS
+function menuContainer() {
+  const menu = new XMLHttpRequest();
+  menu.open("GET", "./menu.json");
+  menu.send();
+
+  menu.addEventListener("load", function () {
+    const menuList = JSON.parse(this.responseText);
+    // console.log(menuList);
+
+    let mainCourse = document.querySelector(".btn-main-course");
+    let breadTacos = document.querySelector(".btn-bread");
+    let pastaPizza = document.querySelector(".btn-pasta");
+    let salad = document.querySelector(".btn-salad");
+
+    mainCourse.addEventListener("click", function () {
+      displayListMenu(menuList, "Main Course");
+    });
+
+    breadTacos.addEventListener("click", function () {
+      displayListMenu(menuList, "Appetizer");
+    });
+
+    pastaPizza.addEventListener("click", function () {
+      displayListMenu(menuList, "Entrees");
+    });
+
+    salad.addEventListener("click", function () {
+      displayListMenu(menuList, "Side dish");
+    });
+  });
+}
+
+function displayListMenu(data, menuName) {
+  // console.log(data);
+  // alert("hello-bread");
+
+  let div = "";
+
+  const menuEntry = data.filter((item) => item.categories === menuName);
+
+  for (const key of Object.keys(menuEntry)) {
+    // console.log(menuEntry[key].name);
+    div += `  <div class=" col-sm-12 col-md-12 col-lg-6 menu-style">
+    <div class="row d-flex">
+      <img src="${menuEntry[key].photo}" class="col-md-5 col-lg-5">
+      <div class=" col-md-7 col-lg-7 menu-text">
+        <h3 class="menu-name">${menuEntry[key].name}</h3>
+        <p class='mt-1'>${menuEntry[key].description}</p>
+        <p class='ingredients'>${menuEntry[key].ingredients}</p>
+        <p>Price : ${menuEntry[key].price} USD</p>
+      </div>
+    </div>
+  </div>`;
+  }
+
+  document.querySelector(".show-menu").innerHTML = div;
+}
+
+function mainCourseOnly() {
+  const menu = new XMLHttpRequest();
+  menu.open("GET", "./menu.json");
+  menu.send();
+
+  menu.addEventListener("load", function () {
+    const menuList = JSON.parse(this.responseText);
+
+    let div = "";
+
+    const mainCourseItems = menuList.filter(
+      (item) => item.categories === "Main Course"
+    );
+
+    for (const menuItem of mainCourseItems) {
+      div += `
+        <div class="col-sm-12 col-md-12 col-lg-6 menu-style">
+          <div class="row d-flex">
+            <img src="${menuItem.photo}" class="col-md-5 col-lg-5">
+            <div class="col-md-7 col-lg-7 menu-text">
+              <h3 class="menu-name">${menuItem.name}</h3>
+              <p class='mt-1'>${menuItem.description}</p>
+              <p class='ingredients'>${menuItem.ingredients}</p>
+              <p>Price : ${menuItem.price} USD</p>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    document.querySelector(".show-menu").innerHTML = div;
+  });
+}
+
+function menuHeading() {
+  let div = ` <div class="container">
+  <div class="row">
+    <div class="col text-design">
+      <h2 class="text-center beer-text mt-4">Our Menus</h2>
+      <p>Satisfy Every Plate</p>
+    </div>
+  </div>
+  <div class="row text-center mt-5">
+   <div class="col">
+    <button  class="btn btn-lg btn-warning btn-main-course">Main Course</button>
+    <button class="btn btn-lg btn-warning btn-bread">Bread & Tacos</button>
+    <button class="btn btn-lg  btn-warning btn-pasta ">Pasta & Pizza</button>
+    <button class="btn btn-lg  btn-warning btn-salad">Salad</button>
+   </div>
+  </div>
+  <div class="row  row-cols-1 row-cols-lg-6 g-5 pb-4 mt-5 show-menu">
+  </div>
+  <div class="row">
+      <div class="col">
+        <h2 class="text-advice">Kindly be advised that our menus are subject to regular updates based on seasonal availability.<br> For the latest information on our offerings, feel free to reach out to us via phone or email.</h2>
+      </div>
+    </div>`;
+  document.querySelector(".menu-container").innerHTML = div;
+  mainCourseOnly();
+  menuContainer();
 }

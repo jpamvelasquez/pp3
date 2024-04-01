@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-family: "Marcellus", serif;
   font-weight: 500;
 }
@@ -22,19 +22,19 @@ body {
 
 /* search-input */
 .search-state input {
-  height: 4rem;
-  width: 20rem;
+  height: 3.5rem;
+  width: 18rem;
   font-size: 1.5rem;
 }
 
 .btn-search {
-  height: 4rem;
+  height: 3.5rem;
   width: 9.5rem;
   font-size: 1.5rem;
-  background: #e6b908;
-  transition: 0.5s;
+  /* background: #e6b908; */
+  /* transition: 0.5s; */
 }
-
+/* 
 .btn-search:hover {
   background-color: rgb(114, 97, 29);
 }
@@ -48,7 +48,7 @@ body {
   box-shadow: 0 0 5px rgba(30, 27, 14, 0.5);
   border: none;
   color: white;
-}
+} */
 
 .navbar-toggler-icon {
   font-size: 2.5rem;
@@ -534,4 +534,43 @@ hr {
 
 .not-avail {
   color: rgb(219, 55, 55);
+}
+
+/* .menu-style {
+  border: 1px solid red;
+} */
+
+.menu-text {
+  font-size: 1.6rem;
+  /* border: 1px solid black; */
+  line-height: 1;
+}
+
+.menu-name {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+  color: #414115;
+}
+
+.ingredients {
+  font-size: 1.4rem;
+  color: rgb(130, 127, 127);
+}
+
+.text-advice {
+  font-style: italic;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+footer p {
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+.service li {
+  font-size: 1.7rem;
+  line-height: 1.3;
+  color: red;
 }

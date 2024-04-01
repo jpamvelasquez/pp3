@@ -2,87 +2,99 @@
   {
     "name": "Chessy Heaven",
     "categories": "Entrees",
-    "ingredients": "Mozzarella Cheese , Cheddar Cheese, Parmessan Cheese, Gouda Cheese, Hand-tossed artisan crust",
+    "ingredients": "Mozzarella Cheese , Cheddar Cheese, Parmessan Cheese, Gouda Cheese",
     "price": "12.99",
-    "description": "Indulge in a heavenly combination of Mozzarella, Cheddar, Parmesan, and Gouda cheeses on our hand-tossed artisan crust."
+    "description": "Indulge in a heavenly combination of Mozzarella, Cheddar, Parmesan, and Gouda cheeses on our hand-tossed artisan crust.",
+    "photo": "./images/menuCover/cheesy.svg"
   },
   {
     "name": "Supreme Delight ",
     "categories": "Entrees",
     "ingredients": "Mozzarella Cheese , Sliced Pepperoni, Fresh Mushrooms, Olive, Crisp bell peppers, Sliced Onions, Rich marinara sauce, Hand-tossed artisan crust",
     "price": "14.99",
-    "description": "Experience the ultimate delight with a combination of sliced pepperoni, fresh mushrooms, olives, crisp bell peppers, and sliced onions on a bed of rich marinara sauce atop our hand-tossed artisan crust."
+    "description": "The 'Supreme Delight' is a mouthwatering entree. ",
+    "photo": "./images/menuCover/supreme.svg"
   },
   {
     "name": "Lasagna",
     "categories": "Entrees",
-    "ingredients": "Lasagna noodles, Ground beef, Tomato sauce, Ricotta cheese, Mozzarella cheese, Parmesan cheese, Onion, Garlic, Italian seasoning, Salt, Pepper",
+    "ingredients": "Lasagna noodles, Ground beef, Tomato sauce, Ricotta cheese, Onion, Garlic, Italian seasoning, Salt, Pepper",
     "price": "14.99",
-    "description": "Indulge in layers of flavorful lasagna noodles, seasoned ground beef, rich tomato sauce, creamy ricotta cheese, melted mozzarella cheese, and grated Parmesan cheese, infused with the savory aroma of onion, garlic, and Italian seasoning."
+    "description": "Indulge in layers of flavorful lasagna noodles.",
+    "photo": "./images/menuCover/lasagna.svg"
   },
   {
     "name": "Spaghetti With Marinara Sauce",
     "categories": "Entrees",
     "ingredients": "Spaghetti pasta, Marinara sauce, Ground beef, Onion, Garlic, Olive oil, Italian seasoning, Salt, Pepper",
     "price": "10.99",
-    "description": "Enjoy a hearty plate of al dente spaghetti pasta generously topped with savory marinara sauce, perfectly seasoned ground beef, sautéed onion, and garlic, drizzled with olive oil and sprinkled with Italian seasoning, salt, and pepper."
+    "description": "Enjoy a hearty plate of al dente spaghetti pasta generously topped with savory marinara sauce.",
+    "photo": "./images/menuCover/spag.svg"
   },
   {
     "name": "Classic Hummus with Pita Bread",
     "categories": "Appetizer",
     "ingredients": "Chickpeas, Tahini, Lemon juice, Garlic, Olive oil, Salt, Pita bread",
     "price": "8.99",
-    "description": "Indulge in a delightful appetizer featuring creamy and smooth classic hummus made from blended chickpeas, tahini, fresh lemon juice, and garlic, drizzled with olive oil and served with warm and soft pita bread."
+    "description": "Indulge in a delightful appetizer featuring creamy and smooth classic hummus made from blended chickpeas.",
+    "photo": "./images/menuCover/hummus.svg"
   },
   {
     "name": "Beef Tacos",
     "categories": "Appetizer",
     "ingredients": "Ground beef, Taco seasoning, Tortillas, Lettuce, Tomato, Cheese, Salsa, Sour cream",
     "price": "12.99",
-    "description": "Savor the irresistible flavors of seasoned ground beef served in soft tortillas, topped with fresh lettuce, diced tomatoes, shredded cheese, zesty salsa, and a dollop of creamy sour cream."
+    "description": "Savor the irresistible flavors of seasoned ground beef served in soft tortillas, topped with fresh lettuce.",
+    "photo": "./images/menuCover/tacos.svg"
   },
   {
     "name": "Chicken Caesar Salad",
     "categories": "Side dish",
     "ingredients": "Romaine lettuce, Grilled chicken breast, Parmesan cheese, Croutons, Caesar dressing",
     "price": "9.99",
-    "description": "Indulge in the classic combination of crisp romaine lettuce, grilled chicken breast, shaved Parmesan cheese, crunchy croutons, and tangy Caesar dressing."
+    "description": "Indulge in the classic combination of crisp romaine lettuce, grilled chicken breast.",
+    "photo": "./images/menuCover/ceasar.svg"
   },
   {
     "name": "Herb Lemon Salad",
-    "category": "Side dish",
+    "categories": "Side dish",
     "description": "A vibrant salad bursting with fresh herbs and zesty lemon dressing.",
     "ingredients": "Mixed greens, parsley, cilantro, dill, mint, lemon zest, lemon juice, olive oil, salt, pepper",
-    "price": "8.99"
+    "price": "8.99",
+    "photo": "./images/menuCover/herbs.svg"
   },
 
   {
     "name": "Succulent Roast Beef",
-    "category": "Entrees",
+    "categories": "Main Course",
     "description": "Tender slices of slow-roasted beef served with savory gravy.",
     "ingredients": "Beef roast, Salt, Pepper, Garlic, Onion, Beef broth, Flour",
-    "price": "14.99"
+    "price": "14.99",
+    "photo": "./images/menuCover/roast.svg"
   },
   {
     "name": "Grilled Tuna Steak",
-    "category": "Entrees",
+    "categories": "Main Course",
     "description": "Delicious tuna steak seasoned with herbs and spices, grilled to perfection.",
     "ingredients": "Tuna steak, Olive oil, Lemon juice, Garlic, Salt, Pepper, Herbs",
-    "price": "16.99"
+    "price": "16.99",
+    "photo": "./images/menuCover/tuna.svg"
   },
 
   {
     "name": "Chicken Fried Steak",
-    "category": "Entrees",
+    "categories": "Main Course",
     "description": "Tender steak coated in seasoned flour, fried until golden brown, and served with creamy gravy.",
     "ingredients": "Beef steak, Flour, Eggs, Milk, Salt, Pepper, Seasonings, Oil for frying",
-    "price": "14.99"
+    "price": "14.99",
+    "photo": "./images/menuCover/chicken.svg"
   },
   {
     "name": "Steamed Fish",
-    "category": "Entrees",
+    "categories": "Main Course",
     "description": "Fresh fish fillet delicately seasoned and steamed to perfection, served with a side of vegetables.",
     "ingredients": "Fresh fish fillet, Seasonings, Vegetables",
-    "price": "16.99"
+    "price": "16.99",
+    "photo": "./images/menuCover/steamfish.svg"
   }
 ]
