@@ -278,7 +278,10 @@ const stateAbbreviations = {
 
 //Online API Calling
 function onlineBeerApi() {
-  let state = document.querySelector(".state-form").value.trim().toUpperCase();
+  const spinner = document.querySelector(".spinner-container");
+  spinner.classList.remove("d-none");
+
+  let state = document.querySelector(".state-form").value.trim().toLowerCase();
 
   if (state === "" || !isNaN(state) || state.length <= 3) {
     alert("Invalid Input. Please enter a state.");
@@ -355,11 +358,17 @@ function onlineBeerApi() {
     }
 
     searchContainer();
-    let stateText = state[0].toUpperCase() + state.slice(1).toLowerCase();
 
+    let stateText = state.split(" ");
+    let textSplit = [];
+    for (const name of stateText) {
+      textSplit.push(name.replace(name[0], name[0].toUpperCase()));
+    }
+    let stateName = textSplit.join(" ");
+    console.log(stateText);
     document.querySelector(
       ".brew-text"
-    ).innerText = `${stateText} Brewery Guide`;
+    ).innerText = `${stateName} Brewery Guide`;
     document.querySelector(".directories").innerHTML = divs;
     document.querySelector(".state-form").value = "";
     console.log("working api");
@@ -482,7 +491,7 @@ function menuHeading() {
   </div>
   <div class="row text-center mt-5">
    <div class="col">
-    <button  class="btn btn-lg btn-warning btn-main-course">Main Course</button>
+    <button  class="btn btn-lg  btn-main-course btn-active">Main Course</button>
     <button class="btn btn-lg btn-warning btn-bread">Bread & Tacos</button>
     <button class="btn btn-lg  btn-warning btn-pasta ">Pasta & Pizza</button>
     <button class="btn btn-lg  btn-warning btn-salad">Salad</button>
@@ -495,7 +504,10 @@ function menuHeading() {
         <h2 class="text-advice">Kindly be advised that our menus are subject to regular updates based on seasonal availability.<br> For the latest information on our offerings, feel free to reach out to us via phone or email.</h2>
       </div>
     </div>`;
+
   document.querySelector(".menu-container").innerHTML = div;
+
   mainCourseOnly();
+
   menuContainer();
 }
