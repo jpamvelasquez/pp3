@@ -597,10 +597,9 @@ footer p {
 }
 
 /* spinner */
-.spinner-container {
+/* .spinner-container {
   display: none;
-}
-
+} */
 .loader {
   width: 60px;
   height: 160px;
@@ -631,10 +630,11 @@ footer p {
 .loader-div {
   text-align: center;
   width: 100%;
-  height: 60vh;
+  height: 30vh;
   justify-content: center;
   display: flex;
   align-items: center;
+  margin-top: 15rem;
 }
 
 @keyframes fill {

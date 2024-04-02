@@ -48,10 +48,12 @@ function menuSection(e) {
   menuHeading();
   // menuContainer();
   // mainCourseOnly();
+
   toggleClass(".home-container", true);
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
   toggleClass(".search-section", true);
+  toggleClass("spinner-container", true);
 }
 
 function searchSection(e) {
@@ -89,13 +91,16 @@ function toggleClass(classSelector, show = false) {
 
 //Our Beer Section
 function ourBeer() {
+  toggleClass(".beer-spinner-container");
+
   let beer = new XMLHttpRequest();
   beer.open("GET", "./beers.json");
   beer.send();
+
   beer.addEventListener("load", function () {
     let beerData = JSON.parse(this.responseText);
     console.log(beerData);
-
+    toggleClass(".beer-spinner-container", true);
     displayBeer(beerData);
     modalBeer(beerData);
     document
@@ -210,7 +215,21 @@ function ourBrew() {
           </select>
         </div>
       </div>
+      <div class="beer-spinner-container">
+      <div class="loader-div">
+        <div>
+          <div>
+            <span class="loader"></span>
+          </div>
+         <div class="mt-5">
+          <span class="loaders"></span>
+         </div>
+        </div>
+      </div>
+    </div> 
+  
     </div>
+    
     <div class="row row-cols-1 row-cols-md-4 g-5 pb-4 text-center beer-section">
     
     </div>
@@ -278,9 +297,6 @@ const stateAbbreviations = {
 
 //Online API Calling
 function onlineBeerApi() {
-  const spinner = document.querySelector(".spinner-container");
-  spinner.classList.remove("d-none");
-
   let state = document.querySelector(".state-form").value.trim().toLowerCase();
 
   if (state === "" || !isNaN(state) || state.length <= 3) {
@@ -356,7 +372,7 @@ function onlineBeerApi() {
         </div>
     </div>`;
     }
-    spinner.classList.add("d-none");
+    toggleClass(".online-api-spinner-container", true);
     searchContainer();
 
     let stateText = state.split(" ");
@@ -371,14 +387,30 @@ function onlineBeerApi() {
     ).innerText = `${stateName} Brewery Guide`;
     document.querySelector(".directories").innerHTML = divs;
     document.querySelector(".state-form").value = "";
+
     console.log("working api");
   });
 }
 
 function searchContainer() {
-  let div = `<div class="container">
+  let div = `
+
+    
+  <div class="container">
   <div class="search-by-state">
     <h2 class="text-center brew-text">Texas Brewery Guide</h2>
+    <div class="online-api-spinner-container">
+    <div class="loader-div">
+      <div>
+        <div>
+          <span class="loader"></span>
+        </div>
+      <div class="mt-5">
+        <span class="loaders"></span>
+      </div>
+      </div>
+    </div>
+  </div>
     <div class="display-directories">
     <div class="row row-cols-1 row-cols-md-4 g-4 pb-4 directories">
     </div>
@@ -400,7 +432,7 @@ function menuContainer() {
   menu.addEventListener("load", function () {
     const menuList = JSON.parse(this.responseText);
     // console.log(menuList);
-
+    toggleClass(".spinner-container", true);
     let mainCourse = document.querySelector(".btn-main-course");
     let breadTacos = document.querySelector(".btn-bread");
     let pastaPizza = document.querySelector(".btn-pasta");
@@ -422,13 +454,16 @@ function menuContainer() {
     salad.addEventListener("click", function () {
       displayListMenu(menuList, "Side dish");
     });
+
+    toggleClass(".spinner-container", true);
   });
+  console.log("this is menu container");
 }
 
 function displayListMenu(data, menuName) {
   // console.log(data);
   // alert("hello-bread");
-
+  console.log("this is displaylistmenu");
   let div = "";
 
   const menuEntry = data.filter((item) => item.categories === menuName);
@@ -452,21 +487,19 @@ function displayListMenu(data, menuName) {
 }
 
 function mainCourseOnly() {
-  let spinner = document.querySelector(".spinner-container");
-  spinner.classList.add("d-block");
   const menu = new XMLHttpRequest();
   menu.open("GET", "./menu.json");
   menu.send();
 
   menu.addEventListener("load", function () {
     const menuList = JSON.parse(this.responseText);
-    spinner.classList.remove("d-block");
+
     let div = "";
 
     const mainCourseItems = menuList.filter(
       (item) => item.categories === "Main Course"
     );
-
+    toggleClass(".spinner-container", true);
     for (const menuItem of mainCourseItems) {
       div += `
         <div class="col-sm-12 col-md-12 col-lg-6 menu-style">
@@ -483,6 +516,7 @@ function mainCourseOnly() {
     }
 
     document.querySelector(".show-menu").innerHTML = div;
+    console.log("this is main course");
   });
 }
 
@@ -522,10 +556,9 @@ function menuHeading() {
         <h2 class="text-advice">Kindly be advised that our menus are subject to regular updates based on seasonal availability.<br> For the latest information on our offerings, feel free to reach out to us via phone or email.</h2>
       </div>
     </div>`;
-
+  toggleClass(".spinner-container", true);
   document.querySelector(".menu-container").innerHTML = div;
-
   mainCourseOnly();
-
   menuContainer();
+  console.log("this is menu heading");
 }
