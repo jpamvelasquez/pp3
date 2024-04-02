@@ -356,7 +356,7 @@ function onlineBeerApi() {
         </div>
     </div>`;
     }
-
+    spinner.classList.add("d-none");
     searchContainer();
 
     let stateText = state.split(" ");
