@@ -631,7 +631,7 @@ footer p {
 .loader-div {
   text-align: center;
   width: 100%;
-  height: 90vh;
+  height: 60vh;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -653,7 +653,7 @@ footer p {
     box-shadow: 0 0 inset;
   }
   100% {
-    box-shadow: 0 -55px inset;
+    box-shadow: 0 -60px inset;
   }
 }
 

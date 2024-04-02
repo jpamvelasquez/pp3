@@ -392,8 +392,6 @@ function searchContainer() {
 //MENU FUNCTIONS
 function menuContainer() {
   //spinner
-  const spinner = document.querySelector(".spinner-container");
-  spinner.classList.remove("d-none");
 
   const menu = new XMLHttpRequest();
   menu.open("GET", "./menu.json");
@@ -408,9 +406,6 @@ function menuContainer() {
     let pastaPizza = document.querySelector(".btn-pasta");
     let salad = document.querySelector(".btn-salad");
     const spinner = document.querySelector(".spinner-container");
-
-    //spinner
-    spinner.classList.add("d-none");
 
     mainCourse.addEventListener("click", function () {
       displayListMenu(menuList, "Main Course");
@@ -457,13 +452,15 @@ function displayListMenu(data, menuName) {
 }
 
 function mainCourseOnly() {
+  let spinner = document.querySelector(".spinner-container");
+  spinner.classList.add("d-block");
   const menu = new XMLHttpRequest();
   menu.open("GET", "./menu.json");
   menu.send();
 
   menu.addEventListener("load", function () {
     const menuList = JSON.parse(this.responseText);
-
+    spinner.classList.remove("d-block");
     let div = "";
 
     const mainCourseItems = menuList.filter(
@@ -505,7 +502,20 @@ function menuHeading() {
     <button class="btn btn-lg  btn-warning btn-salad">Salad</button>
    </div>
   </div>
+  <div class="spinner-container">
+  <div class="loader-div">
+    <div>
+      <div>
+        <span class="loader"></span>
+      </div>
+     <div class="mt-5">
+      <span class="loaders"></span>
+     </div>
+    </div>
+  </div>
+</div>
   <div class="row  row-cols-1 row-cols-lg-6 g-5 pb-4 mt-5 show-menu">
+  
   </div>
   <div class="row">
       <div class="col">
