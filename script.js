@@ -391,6 +391,10 @@ function searchContainer() {
 
 //MENU FUNCTIONS
 function menuContainer() {
+  //spinner
+  const spinner = document.querySelector(".spinner-container");
+  spinner.classList.remove("d-none");
+
   const menu = new XMLHttpRequest();
   menu.open("GET", "./menu.json");
   menu.send();
@@ -403,6 +407,10 @@ function menuContainer() {
     let breadTacos = document.querySelector(".btn-bread");
     let pastaPizza = document.querySelector(".btn-pasta");
     let salad = document.querySelector(".btn-salad");
+    const spinner = document.querySelector(".spinner-container");
+
+    //spinner
+    spinner.classList.add("d-none");
 
     mainCourse.addEventListener("click", function () {
       displayListMenu(menuList, "Main Course");
