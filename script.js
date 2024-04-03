@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   allBeers.addEventListener("click", beerSection);
   menu.addEventListener("click", menuSection);
   search.addEventListener("click", searchSection);
+  contact.addEventListener("click", contactSection);
   keyEnter.addEventListener("keypress", handleKeyEnter);
 
   console.log("Event listeners attached");
@@ -27,6 +28,7 @@ function homeSection(e) {
   toggleClass(".beer-fluid", true);
   toggleClass(".menu-container", true);
   toggleClass(".search-section", true);
+  toggleClass(".contact-container", true);
 }
 
 function beerSection(e) {
@@ -38,6 +40,7 @@ function beerSection(e) {
   toggleClass(".home-container", true);
   toggleClass(".menu-container", true);
   toggleClass(".search-section", true);
+  toggleClass(".contact-container", true);
 }
 
 function menuSection(e) {
@@ -54,6 +57,7 @@ function menuSection(e) {
   toggleClass(".beer-fluid", true);
   toggleClass(".search-section", true);
   toggleClass("spinner-container", true);
+  toggleClass(".contact-container", true);
 }
 
 function searchSection(e) {
@@ -66,6 +70,7 @@ function searchSection(e) {
   toggleClass(".home-container", true);
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
+  toggleClass(".contact-container", true);
 }
 
 function handleKeyEnter(e) {
@@ -79,7 +84,18 @@ function handleKeyEnter(e) {
     toggleClass(".home-container", true);
     toggleClass(".ourBeers", true);
     toggleClass(".beer-fluid", true);
+    toggleClass(".contact-container", true);
   }
+}
+
+function contactSection(e) {
+  e.preventDefault();
+  toggleClass(".contact-container");
+  toggleClass(".search-section", true);
+  toggleClass(".menu-container", true);
+  toggleClass(".home-container", true);
+  toggleClass(".ourBeers", true);
+  toggleClass(".beer-fluid", true);
 }
 //Function to toggle
 function toggleClass(classSelector, show = false) {
@@ -241,59 +257,59 @@ function ourBrew() {
 
 // ourBrew();
 
-//State abbreviations if user input abbreviations
-const stateAbbreviations = {
-  AL: "Alabama",
-  AK: "Alaska",
-  AZ: "Arizona",
-  AR: "Arkansas",
-  CA: "California",
-  CO: "Colorado",
-  CT: "Connecticut",
-  DE: "Delaware",
-  FL: "Florida",
-  GA: "Georgia",
-  HI: "Hawaii",
-  ID: "Idaho",
-  IL: "Illinois",
-  IN: "Indiana",
-  IA: "Iowa",
-  KS: "Kansas",
-  KY: "Kentucky",
-  LA: "Louisiana",
-  ME: "Maine",
-  MD: "Maryland",
-  MA: "Massachusetts",
-  MI: "Michigan",
-  MN: "Minnesota",
-  MS: "Mississippi",
-  MO: "Missouri",
-  MT: "Montana",
-  NE: "Nebraska",
-  NV: "Nevada",
-  NH: "New Hampshire",
-  NJ: "New Jersey",
-  NM: "New Mexico",
-  NY: "New York",
-  NC: "North Carolina",
-  ND: "North Dakota",
-  OH: "Ohio",
-  OK: "Oklahoma",
-  OR: "Oregon",
-  PA: "Pennsylvania",
-  RI: "Rhode Island",
-  SC: "South Carolina",
-  SD: "South Dakota",
-  TN: "Tennessee",
-  TX: "Texas",
-  UT: "Utah",
-  VT: "Vermont",
-  VA: "Virginia",
-  WA: "Washington",
-  WV: "West Virginia",
-  WI: "Wisconsin",
-  WY: "Wyoming",
-};
+// //State abbreviations if user input abbreviations
+// const stateAbbreviations = {
+//   AL: "Alabama",
+//   AK: "Alaska",
+//   AZ: "Arizona",
+//   AR: "Arkansas",
+//   CA: "California",
+//   CO: "Colorado",
+//   CT: "Connecticut",
+//   DE: "Delaware",
+//   FL: "Florida",
+//   GA: "Georgia",
+//   HI: "Hawaii",
+//   ID: "Idaho",
+//   IL: "Illinois",
+//   IN: "Indiana",
+//   IA: "Iowa",
+//   KS: "Kansas",
+//   KY: "Kentucky",
+//   LA: "Louisiana",
+//   ME: "Maine",
+//   MD: "Maryland",
+//   MA: "Massachusetts",
+//   MI: "Michigan",
+//   MN: "Minnesota",
+//   MS: "Mississippi",
+//   MO: "Missouri",
+//   MT: "Montana",
+//   NE: "Nebraska",
+//   NV: "Nevada",
+//   NH: "New Hampshire",
+//   NJ: "New Jersey",
+//   NM: "New Mexico",
+//   NY: "New York",
+//   NC: "North Carolina",
+//   ND: "North Dakota",
+//   OH: "Ohio",
+//   OK: "Oklahoma",
+//   OR: "Oregon",
+//   PA: "Pennsylvania",
+//   RI: "Rhode Island",
+//   SC: "South Carolina",
+//   SD: "South Dakota",
+//   TN: "Tennessee",
+//   TX: "Texas",
+//   UT: "Utah",
+//   VT: "Vermont",
+//   VA: "Virginia",
+//   WA: "Washington",
+//   WV: "West Virginia",
+//   WI: "Wisconsin",
+//   WY: "Wyoming",
+// };
 
 //Online API Calling
 function onlineBeerApi() {
@@ -441,18 +457,26 @@ function menuContainer() {
 
     mainCourse.addEventListener("click", function () {
       displayListMenu(menuList, "Main Course");
+      console.log("this is main course menu");
+      toggleButtonClasses(this);
     });
 
     breadTacos.addEventListener("click", function () {
       displayListMenu(menuList, "Appetizer");
+      console.log("this is bread and tacos menu");
+      toggleButtonClasses(this);
     });
 
     pastaPizza.addEventListener("click", function () {
       displayListMenu(menuList, "Entrees");
+      console.log("this is pasta pizaa menu");
+      toggleButtonClasses(this);
     });
 
     salad.addEventListener("click", function () {
       displayListMenu(menuList, "Side dish");
+      console.log("this is salad");
+      toggleButtonClasses(this);
     });
 
     toggleClass(".spinner-container", true);
@@ -524,16 +548,16 @@ function menuHeading() {
   let div = ` <div class="container">
   <div class="row">
     <div class="col text-design">
-      <h2 class="text-center beer-text mt-4">Our Menus</h2>
+      <h2 class="text-center beer-text mt-4" >Our Menus</h2>
       <p>Satisfy Every Plate</p>
     </div>
   </div>
   <div class="row text-center mt-5">
-   <div class="col">
-    <button  class="btn btn-lg  btn-main-course btn-active">Main Course</button>
-    <button class="btn btn-lg btn-warning btn-bread">Bread & Tacos</button>
-    <button class="btn btn-lg  btn-warning btn-pasta ">Pasta & Pizza</button>
-    <button class="btn btn-lg  btn-warning btn-salad">Salad</button>
+   <div class="col ">
+    <button  class="btn btn-lg  btn-main-course btn-warning btn-active me-2 mb-1"">Main Course</button>
+    <button class="btn btn-lg me-2  mb-1 btn-warning btn-bread">Bread & Tacos</button>
+    <button class="btn mb-1 btn-lg  me-2 btn-warning btn-pasta ">Pasta & Pizza</button>
+    <button class="btn btn-lg  me-2  mb-1 btn-warning btn-salad">Salad</button>
    </div>
   </div>
   <div class="spinner-container">
@@ -561,4 +585,97 @@ function menuHeading() {
   mainCourseOnly();
   menuContainer();
   console.log("this is menu heading");
+}
+
+//button toggle
+
+function toggleButtonClasses(clickedButton) {
+  const buttons = document.querySelectorAll(".btn-lg");
+
+  buttons.forEach((button) => button.classList.remove("btn-active"));
+  clickedButton.classList.add("btn-active");
+}
+
+//Contact
+
+function displayContact() {
+  let div = `   <div class="row contact-details">
+  <div class="text-design">
+    <h2 class="beer-text text-center">Reach out to us</h2>
+    <p> Get in Touch for Brews & Bookings!</p>
+  </div>
+  
+  <div class="row info">
+    <div class="col-sm-12 col-md-4 col-lg-4 location">
+      <div class="d-flex justify-content-center mb-4">
+      <div class="contact-icon">
+        <i class="bi bi-geo-alt"></i>
+      </div>
+      </div>
+      <h3 class="contact-section">Hours & Location</h3>
+      <div class="bar-address">
+        <h4 class="days">Address</h4>
+        <p>196 Co Road 110</p>
+        <p>Comanche Texas, 742</p>
+        <p>United States</p>
+      </div>
+      <h3 class="days">Monday - Thursday</h3>
+      <p> 10:00 am to 10:00 pm</p>
+      <h3 class="days"> Friday & Saturday </h3>
+      <p>10:00 am to 11:00 pm</p>
+      <h3 class="days"> Sunday</h3>
+      <p>CLOSED</p>
+     
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 phone">
+      <div class="d-flex justify-content-center  mb-4">
+      <div class="contact-icon">
+        <i class="bi bi-telephone"></i>
+      </div>
+      </div>
+      <h3  class="contact-section">Phone</h3>
+      <h4 class="days">Customer Support</h4>
+      <p> Our dedicated customer support team is available to assist you with any issues or concerns you may have. Please don't hesitate to reach out to us for assistance.</p>
+      <p>Tel : +1 (555) 987-6543 </p>
+      <h4 class="days">Booking & Reservations</h4>
+      <p> Planning to visit us for a brewery tour, tasting event, or private function? Contact our booking team to reserve your spot or inquire about availability.</p>
+      <p>
+        Tel : (Booking): +1 (555) 234-5678
+      </p>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 email">
+      <div class="d-flex justify-content-center  mb-4">
+        <div class="contact-icon">
+          <i class="bi bi-chat-square-dots"></i>
+        </div>
+      </div>
+      
+      <h3  class="contact-section">Email</h3>
+      <h4 class="days">General Inquiries</h4>
+      <p>
+        If you have any general questions or feedback, please don't hesitate to get in touch with us. We're here to assist you.
+      </p>
+      <p>
+        Email : brews.co@gmail.com
+      </p>
+    </div>
+    <div class="row">
+      <p class="text-advices">We strictly prohibit the consumption of alcoholic beverages brought from outside.<br> Our establishment exclusively offers beer, and we adhere to this policy by only serving beer.</p>
+    </div>
+  </div>
+</div>
+<div class="container-md">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <h2>Message</h2>
+      <p> Send Us Your Thoughts and Queries! We're Here to Listen.<br> Got a Question? We've Got Answers! <br>Connect with Us Today. Your Feedback Matters to Us!</p>
+    </div>
+    <div class= " col-sm-12 col-md-6 col-lg-6">
+      <h2>Message Us</h2>
+   
+    </div>
+  </div>
+</div>`;
+
+  document.querySelector(".contact-container").innerHTML = div;
 }

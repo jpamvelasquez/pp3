@@ -582,18 +582,25 @@ footer p {
 .btn-active {
   background-color: #979530 !important;
   width: 12rem;
-  height: 3.7rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  font-weight: 600;
-  outline: none;
-  border: none;
+  height: 3.4rem;
   opacity: 0.8;
+  color: whitesmoke;
 }
 
-.btn-warnings {
-  background-color: #d8ba6e !important;
+.btn-active:hover {
+  color: whitesmoke;
+}
+.btn {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: 0.5s;
+
   outline: none;
   border: none;
+  transition: all 0.3s ease;
+}
+.btn-warning:hover {
+  background-color: #dfdf99;
+  transition: 0.5s;
 }
 
 /* spinner */
@@ -684,4 +691,65 @@ footer p {
   100% {
     box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px;
   }
+}
+
+/* contact */
+
+.info {
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+  /* background-color: #979530; */
+}
+
+.bar-address {
+  line-height: 1;
+  margin-top: 2rem;
+}
+
+.days {
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.contact-icon {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50rem;
+  text-align: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6b908;
+}
+.contact-icon .bi {
+  font-size: 2.5rem;
+}
+
+.location,
+.phone,
+.email {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 3rem;
+}
+
+.contact-section {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.text-advices {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.contact-details {
+  margin-top: 3rem;
+}
+.container-md {
+  background-color: #5b79da;
 }
