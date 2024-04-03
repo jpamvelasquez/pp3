@@ -227,19 +227,21 @@ form button {
 .hero-beer {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
     url("./images/heroCovers/4.png");
-  height: 70rem;
+  height: 90vh;
   margin-bottom: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 .hero-beer h1 {
-  padding: 0 !important;
-  margin: 0 !important;
   color: white;
   font-size: 4.5rem;
   font-family: "Varela Round";
   font-weight: 700;
+  padding: 4rem;
 }
 
 /* sort */
@@ -718,4 +720,36 @@ footer p {
 
 .carousel-inner {
   height: 90vh;
+}
+
+.submit-form {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+}
+
+.no-border,
+.no-border:active {
+  height: 3rem;
+
+  font-size: 1.5rem;
+}
+
+.form-message {
+  font-size: 1.8rem;
+  margin-left: 2.4rem;
+  font-family: "Varela Round";
+  color: rgb(8, 115, 47);
+  height: 4rem;
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.no-outline {
+  font-size: 1.6rem;
+}
+
+.bi-check2 {
+  font-size: 2.9rem;
 }

@@ -176,39 +176,40 @@
         <p> Send Us Your Thoughts and Queries! We're Here to Listen.<br> Got a Question? We've Got Answers! <br>Connect with Us Today. Your Feedback Matters to Us!</p>
       </div>
       <div class= " col-sm-12 col-md-6 col-lg-6">
-        <form class="row  my-3 mx-4 contact-field mt-4">
+        <form class="row  my-3 mx-4 contact-field mt-4 "  name="submit-to-google-sheet">
           <div class="col-md-6 border-form">
               <label class="form-label">First Name</label>
-              <input class="form-control no-border"  type="text" required>
+              <input class="form-control no-border"  type="text" name="Name" required>
               <div class="invalid-feedback">Input your first name</div>
           </div>
           <div class="col-md-6 border-form">
               <label class="form-label">Last Name</label>
-              <input class="form-control no-border" type="text" required>
+              <input class="form-control no-border" type="text" name="LastName" required>
               <div class="invalid-feedback">Input your last name</div>
           </div>
           <div class="col-md-6 border-form mt-4">
               <label class="form-label">Phone Number</label>
-              <input class="form-control no-border" type="number" required>
+              <input class="form-control no-border" type="number" name="Phone" required>
               <div class="invalid-feedback">Input your phone number</div>
           </div>
           <div class="col-md-6 border-form mt-4">
               <label class="form-label">Email</label>
-              <input class="form-control no-border" type="email" required>
+              <input class="form-control no-border" type="email" name="Email" required>
               <div class="invalid-feedback">Invalid email</div>
           </div>
           <div class="col-md-12 border-form mt-4">
               <label class="form-label">Your Message</label>
-              <textarea class="form-control no-border" required rows="6"></textarea>
+              <textarea class="form-control no-outline" required rows="6" name="Message"></textarea>
               <div class="invalid-feedback">Write a message</div>
           </div>
           
           <div class="col-md mt-4 ">
-            <button type="button" class="btn btn-success px-4  my-2">
-              <a href="#" class="viewmore px-4">Submit</a>
+            <button type="submit" class="btn btn-warning px-4  my-2 submit-form">
+              Submit
             </button>
             </div>
       </form>
+      <span class="form-message"></span>
       </div>
     </div>
     </div>
@@ -458,10 +459,10 @@
             <div class="col-sm-12 col-md-4 col-lg-2">
                 <h3>LINKS</h3>
                 <ul class="service">
-                  <li><a href="#" class=" link-trans footer-home  ">Home</a></li>
-                  <li><a href="#" class="  link-trans footer-beer ">Our Beers</a></li>
-                  <li><a href="#" class=" link-trans footer-btn  footer-menu">Menus</a></li>
-                  <li><a href="#" class="link-trans footer-btn footer-contact">Contact</a></li>
+                  <li><a href="#" class=" link-trans footer-home nav-links ">Home</a></li>
+                  <li><a href="#" class="  link-trans footer-beer nav-links">Our Beers</a></li>
+                  <li><a href="#" class=" link-trans footer-btn nav-links footer-menu">Menus</a></li>
+                  <li><a href="#" class="link-trans footer-btn nav-links footer-contact">Contact</a></li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-4 col-lg-3">
@@ -495,7 +496,48 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    
+
+    <!-- <script>
+      (() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+    </script> -->
       
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwRYoyclhqep-r_2DnUJ9By06t8VVay73Qgvs7sCRGc0JZtQoPor34JhW2UiQL-FOZE/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  const message  = document.querySelector('.form-message');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => { message.innerHTML = 'The message has been successfully sent. <i class="bi bi-check2"></i>'
+      setTimeout(function(){
+        message.innerHTML = ''
+      },3000)
+      form.reset()
+    })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+    <script src="script.js"></script>
+
   </body>
 </html>
