@@ -20,6 +20,9 @@ body {
   height: 7rem;
 }
 
+.active {
+  font-weight: bold;
+}
 /* search-input */
 .search-state input {
   height: 3.5rem;

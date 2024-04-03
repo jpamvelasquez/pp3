@@ -8,7 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
   let contact = document.querySelector(".contact-function");
   let keyEnter = document.querySelector(".state-form");
 
-  console.log("DOMContentLoaded event fired");
+  //footer
+  let footerHome = document.querySelector(".footer-home");
+  let footerBeer = document.querySelector(".footer-beer");
+  let footerMenu = document.querySelector(".footer-menu");
+  let footerContact = document.querySelector(".footer-contact");
+  console.log("DOMContentLoaded event");
+
+  footerHome.addEventListener("click", homeSection);
+  footerBeer.addEventListener("click", beerSection);
+  footerMenu.addEventListener("click", menuSection);
+  footerContact.addEventListener("click", contactSection);
 
   home.addEventListener("click", homeSection);
   allBeers.addEventListener("click", beerSection);
@@ -22,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function homeSection(e) {
   e.preventDefault();
-
+  toggleNavLinks(this);
   toggleClass(".home-container");
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
@@ -35,6 +45,7 @@ function beerSection(e) {
   e.preventDefault();
   ourBeer();
   ourBrew();
+  toggleNavLinks(this);
   toggleClass(".ourBeers");
   toggleClass(".beer-fluid");
   toggleClass(".home-container", true);
@@ -45,7 +56,7 @@ function beerSection(e) {
 
 function menuSection(e) {
   e.preventDefault();
-
+  toggleNavLinks(this);
   toggleClass(".menu-container");
 
   menuHeading();
@@ -61,6 +72,7 @@ function menuSection(e) {
 }
 
 function searchSection(e) {
+  toggleNavLinks(this);
   e.preventDefault();
   onlineBeerApi();
   // searchContainer();
@@ -90,6 +102,7 @@ function handleKeyEnter(e) {
 
 function contactSection(e) {
   e.preventDefault();
+  toggleNavLinks(this);
   toggleClass(".contact-container");
   toggleClass(".search-section", true);
   toggleClass(".menu-container", true);
@@ -594,6 +607,15 @@ function toggleButtonClasses(clickedButton) {
 
   buttons.forEach((button) => button.classList.remove("btn-active"));
   clickedButton.classList.add("btn-active");
+}
+
+//nav-link toggle
+
+function toggleNavLinks(clickedButton) {
+  const links = document.querySelectorAll(".nav-links");
+
+  links.forEach((link) => link.classList.remove("active"));
+  clickedButton.classList.add("active");
 }
 
 //Contact
