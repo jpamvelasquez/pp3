@@ -103,6 +103,7 @@ function handleKeyEnter(e) {
 function contactSection(e) {
   e.preventDefault();
   toggleNavLinks(this);
+  displayContact();
   toggleClass(".contact-container");
   toggleClass(".search-section", true);
   toggleClass(".menu-container", true);
@@ -621,9 +622,9 @@ function toggleNavLinks(clickedButton) {
 //Contact
 
 function displayContact() {
-  let div = `   <div class="row contact-details">
-  <div class="text-design">
-    <h2 class="beer-text text-center">Reach out to us</h2>
+  let div = `  <div class="row contact-details">
+  <div class="text-design mb-4">
+    <h2 class="beer-text text-center contact-reach">Reach out to us</h2>
     <p> Get in Touch for Brews & Bookings!</p>
   </div>
   
@@ -686,16 +687,50 @@ function displayContact() {
     </div>
   </div>
 </div>
+<div class="container-fluid contact-form">
 <div class="container-md">
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-6">
-      <h2>Message</h2>
+    <div class="col-sm-12 col-md-6 col-lg-6 px-5 message-us">
+      <h2 class="contact-h2">Message Us</h2>
       <p> Send Us Your Thoughts and Queries! We're Here to Listen.<br> Got a Question? We've Got Answers! <br>Connect with Us Today. Your Feedback Matters to Us!</p>
     </div>
     <div class= " col-sm-12 col-md-6 col-lg-6">
-      <h2>Message Us</h2>
-   
+      <form class="row  my-3 mx-4 contact-field mt-4 "  name="submit-to-google-sheet">
+        <div class="col-md-6 border-form">
+            <label class="form-label">First Name</label>
+            <input class="form-control no-border"  type="text" name="Name" required>
+            <div class="invalid-feedback">Input your first name</div>
+        </div>
+        <div class="col-md-6 border-form">
+            <label class="form-label">Last Name</label>
+            <input class="form-control no-border" type="text" name="LastName" required>
+            <div class="invalid-feedback">Input your last name</div>
+        </div>
+        <div class="col-md-6 border-form mt-4">
+            <label class="form-label">Phone Number</label>
+            <input class="form-control no-border" type="number" name="Phone" required>
+            <div class="invalid-feedback">Input your phone number</div>
+        </div>
+        <div class="col-md-6 border-form mt-4">
+            <label class="form-label">Email</label>
+            <input class="form-control no-border" type="email" name="Email" required>
+            <div class="invalid-feedback">Invalid email</div>
+        </div>
+        <div class="col-md-12 border-form mt-4">
+            <label class="form-label">Your Message</label>
+            <textarea class="form-control no-outline" required rows="6" name="Message"></textarea>
+            <div class="invalid-feedback">Write a message</div>
+        </div>
+        
+        <div class="col-md mt-4 ">
+          <button type="submit" class="btn px-4 btn-warning my-2 submit-form">
+            Submit
+          </button>
+          </div>
+    </form>
+    <span class="form-message"></span>
     </div>
+  </div>
   </div>
 </div>`;
 
