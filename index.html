@@ -104,8 +104,8 @@
  <!-- Contact Section -->
 <div class="container-fluid contact-container">
   <div class="row contact-details">
-    <div class="text-design">
-      <h2 class="beer-text text-center">Reach out to us</h2>
+    <div class="text-design mb-4">
+      <h2 class="beer-text text-center contact-reach">Reach out to us</h2>
       <p> Get in Touch for Brews & Bookings!</p>
     </div>
     
@@ -168,16 +168,49 @@
       </div>
     </div>
   </div>
+  <div class="container-fluid contact-form">
   <div class="container-md">
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-6">
-        <h2>Message</h2>
+      <div class="col-sm-12 col-md-6 col-lg-6 px-5 message-us">
+        <h2 class="contact-h2">Message Us</h2>
         <p> Send Us Your Thoughts and Queries! We're Here to Listen.<br> Got a Question? We've Got Answers! <br>Connect with Us Today. Your Feedback Matters to Us!</p>
       </div>
       <div class= " col-sm-12 col-md-6 col-lg-6">
-        <h2>Message Us</h2>
-     
+        <form class="row  my-3 mx-4 contact-field mt-4">
+          <div class="col-md-6 border-form">
+              <label class="form-label">First Name</label>
+              <input class="form-control no-border"  type="text" required>
+              <div class="invalid-feedback">Input your first name</div>
+          </div>
+          <div class="col-md-6 border-form">
+              <label class="form-label">Last Name</label>
+              <input class="form-control no-border" type="text" required>
+              <div class="invalid-feedback">Input your last name</div>
+          </div>
+          <div class="col-md-6 border-form mt-4">
+              <label class="form-label">Phone Number</label>
+              <input class="form-control no-border" type="number" required>
+              <div class="invalid-feedback">Input your phone number</div>
+          </div>
+          <div class="col-md-6 border-form mt-4">
+              <label class="form-label">Email</label>
+              <input class="form-control no-border" type="email" required>
+              <div class="invalid-feedback">Invalid email</div>
+          </div>
+          <div class="col-md-12 border-form mt-4">
+              <label class="form-label">Your Message</label>
+              <textarea class="form-control no-border" required rows="6"></textarea>
+              <div class="invalid-feedback">Write a message</div>
+          </div>
+          
+          <div class="col-md mt-4 ">
+            <button type="button" class="btn btn-success px-4  my-2">
+              <a href="#" class="viewmore px-4">Submit</a>
+            </button>
+            </div>
+      </form>
       </div>
+    </div>
     </div>
   </div>
   </div>

@@ -271,79 +271,6 @@ form button {
   border: 2px solid #e6b908;
 }
 
-/* our beer carousel */
-
-/* .ourbeer-carousel-1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-    url("./images/heroCovers/4.png");
-  height: 100%;
-  background-position-x: left;
-  background-repeat: no-repeat;
-}
-
-.ourbeer-carousel-1 .comment-text {
-  height: 100%;
-  color: white;
-
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.ourbeer-carousel-1 .comment-text .row {
-  align-items: center;
-}
-.ourbeer-carousel-1 .comment-text .row .col h1 {
-  font-size: 5rem;
-  font-family: "Varela Round";
-}
-.ourbeer-carousel-2 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-    url("./images/heroCovers/2.png");
-  height: 100%;
-
-  background-repeat: no-repeat;
-}
-
-.ourbeer-carousel-2 .comment-text {
-  height: 100%;
-  color: white;
-
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-.ourbeer-carousel-2 .comment-text .row {
-  align-items: center;
-}
-.ourbeer-carousel-2 .comment-text .row .col h1 {
-  font-size: 5rem;
-  font-family: "Varela Round";
-}
-
-.ourbeer-carousel-3 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
-    url("./images/heroCovers/1.png");
-  height: 100%;
-
-  background-repeat: no-repeat;
-}
-.ourbeer-carousel-3 .comment-text {
-  height: 100%;
-  color: white;
-
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.ourbeer-carousel-3 .comment-text .row {
-  align-items: center;
-}
-.ourbeer-carousel-3 .comment-text .row .col h1 {
-  font-size: 5rem;
-  font-family: "Varela Round";
-} */
-
 .carousel-inner {
   height: 70rem;
 }
@@ -391,8 +318,9 @@ form button {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
     url("./images/heroCovers/5.png");
   height: 100%;
-  background-position-x: left;
+  background-position-x: 50%;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home-carousel-1 .comment-text {
@@ -415,8 +343,9 @@ form button {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
     url("./images/heroCovers/3.png");
   height: 100%;
-  background-position-x: left;
+  background-position-x: 50%;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home-carousel-2 .comment-text {
@@ -439,9 +368,9 @@ form button {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
     url("./images/heroCovers/6.png");
   height: 100%;
-  background-position-x: center;
+  background-position-x: 70%;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 
 .home-carousel-3 .comment-text {
@@ -698,7 +627,7 @@ footer p {
 .info {
   display: flex;
   justify-content: center;
-
+  margin-top: 5rem;
   text-align: center;
   /* background-color: #979530; */
 }
@@ -747,9 +676,43 @@ footer p {
   margin-bottom: 1rem;
 }
 
-.contact-details {
+/* .contact-details {
+  background-color: #e3e3da;
+} */
+.container-md {
+  /* background-color: #5b79da; */
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+}
+
+.contact-h2 {
+  font-family: "Satisfy";
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+}
+
+.contact-reach {
+  margin-top: 2rem;
+}
+
+/* .contact-form {
+  background-color: #dedec6;
+  padding: 0;
+} */
+.contact-container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.contact-field {
   margin-top: 3rem;
 }
-.container-md {
-  background-color: #5b79da;
+
+.message-us {
+  padding-left: 6rem;
+}
+
+.carousel-inner {
+  height: 90vh;
 }
