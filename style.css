@@ -776,9 +776,23 @@ footer p {
 }
 
 .error-container {
-  height: 45vh;
+  height: 60vh;
   /* background-color: #dfdf99; */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.search-modal h5 {
+  font-size: 2rem;
+  color: rgb(190, 57, 57);
+}
+
+.search-modal-dialog {
+  width: 50rem;
+  height: 90rem;
+}
+
+.btn-close {
+  margin-right: 1rem !important;
 }

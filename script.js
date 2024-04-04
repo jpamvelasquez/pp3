@@ -341,11 +341,21 @@ function onlineBeerApi() {
   let state = document.querySelector(".state-form").value.trim().toLowerCase();
 
   if (state === "" || !isNaN(state) || state.length <= 3) {
-    alert("Invalid Input. Please enter a state.");
-    ("error1");
-    console.log("Invalid Input. Please enter a state.");
-    toggleClass(".footer-section", true);
-    window.location.href = "index.html";
+    const searchError = true;
+
+    if (searchError) {
+      showErrorModal("Please provide a valid input. A state name is required");
+    }
+    displayError(
+      "Kindly provide a valid state. Ensure that your input corresponds to a recognized state within the United States."
+    );
+    console.log("Invalid Input. Please enter a state. error 1");
+    toggleClass(".errors-search");
+    toggleClass(".search-section", true);
+    document.querySelector(".search-section").innerHTML = "";
+
+    document.querySelector(".state-form").value = "";
+
     return;
   }
   let beerApi = new XMLHttpRequest();
@@ -362,13 +372,15 @@ function onlineBeerApi() {
 
     if (beerOnlineApi.length === 0) {
       // No breweries found for the provided state
-      displayError();
+      displayError("Apologies but no breweries found for the provided state.");
       toggleClass(".errors-search");
       toggleClass(".search-section", true);
       console.log("error2");
+      document.querySelector(".state-form").value = "";
 
       return;
     }
+
     searchContainer();
 
     let divs = "";
@@ -760,12 +772,12 @@ function displayContact() {
   document.querySelector(".contact-container").innerHTML = div;
 }
 
-// function showErrorModal(message) {
-//   const errorModalBody = document.getElementById("errorModalBody");
-//   errorModalBody.textContent = message;
-//   const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
-//   errorModal.show();
-// }
+function showErrorModal(message) {
+  const errorModalBody = document.getElementById("errorModalBody");
+  errorModalBody.textContent = message;
+  const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+  errorModal.show();
+}
 
 // const searchError = true;
 
@@ -775,12 +787,20 @@ function displayContact() {
 //   );
 // }
 
-function displayError() {
+function displayError(message) {
   let div = `<div class="container error-container">
   <div class="error-message">
-    <h2 class="text-center error-text">Apologies but no breweries found for the provided state. <i class="bi bi-emoji-frown"></i></h2>
+    <h2 class="text-center error-text">${message}</i></h2>
   </div>
 </div>`;
 
   document.querySelector(".errors-search").innerHTML = div;
 }
+
+//Apologies but no breweries found for the provided state.
+// const searchError = true;
+
+// if (searchError) {
+//   showErrorModal("Invalid Input. Please enter a State");
+// }
+// console.log("Invalid Input. Please enter a state.");
