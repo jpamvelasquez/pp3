@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function homeSection(e) {
   e.preventDefault();
   toggleNavLinks(this);
+  scrollUp();
 
   toggleClass(".home-container");
   toggleClass(".errors-search", true);
@@ -47,6 +48,7 @@ function beerSection(e) {
   e.preventDefault();
   ourBeer();
   ourBrew();
+  scrollUp();
   toggleNavLinks(this);
 
   toggleClass(".ourBeers");
@@ -60,6 +62,7 @@ function beerSection(e) {
 
 function menuSection(e) {
   e.preventDefault();
+  scrollUp();
   toggleNavLinks(this);
 
   toggleClass(".menu-container");
@@ -78,7 +81,7 @@ function menuSection(e) {
 
 function searchSection(e) {
   toggleNavLinks(this);
-
+  scrollUp();
   e.preventDefault();
 
   onlineBeerApi();
@@ -112,7 +115,7 @@ function handleKeyEnter(e) {
 function contactSection(e) {
   e.preventDefault();
   toggleNavLinks(this);
-
+  scrollUp();
   displayContact();
   toggleClass(".contact-container");
   toggleClass(".errors-search", true);
@@ -121,6 +124,7 @@ function contactSection(e) {
   toggleClass(".home-container", true);
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
+  hideSideNavbar();
 }
 //Function to toggle
 function toggleClass(classSelector, show = false) {
@@ -271,7 +275,7 @@ function ourBrew() {
   
     </div>
     
-    <div class="row row-cols-1 row-cols-md-4 g-5 pb-4 text-center beer-section">
+    <div class="row row-cols-1 row-cols-md-4 g-4 pb-4 text-center beer-section">
     
     </div>
   </div>
@@ -586,7 +590,7 @@ function mainCourseOnly() {
 }
 
 function menuHeading() {
-  let div = ` <div class="container">
+  let div = ` <div class="container" id='ourmenus'>
   <div class="row">
     <div class="col text-design">
       <h2 class="text-center beer-text mt-4" >Our Menus</h2>
@@ -804,3 +808,11 @@ function displayError(message) {
 //   showErrorModal("Invalid Input. Please enter a State");
 // }
 // console.log("Invalid Input. Please enter a state.");
+
+//scroll to Top
+function scrollUp() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
