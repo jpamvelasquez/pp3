@@ -170,10 +170,13 @@ form button {
 /* modal */
 
 .modal {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 .modal-dialog {
   max-width: 90rem;
+}
+.modal-header {
+  background-color: #e3e3da;
 }
 
 .img-resizes {
@@ -462,8 +465,8 @@ hr {
 }
 
 .link-site {
-  color: #5b79da;
-  font-weight: 600;
+  color: #5170d5;
+  font-weight: normal;
 }
 
 .not-avail {
@@ -632,9 +635,10 @@ footer p {
 .info {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+
   text-align: center;
   /* background-color: #979530; */
+  padding: 0 6rem;
 }
 
 .bar-address {
@@ -644,7 +648,7 @@ footer p {
 
 .days {
   font-size: 1.7rem;
-  margin-top: 2rem;
+  margin-top: 3.5rem;
   font-weight: bold;
 }
 
@@ -752,4 +756,29 @@ footer p {
 
 .bi-check2 {
   font-size: 2.9rem;
+}
+
+.f-nv {
+  line-height: 2.6rem !important;
+}
+
+.offcanvas-end {
+  width: 32rem !important;
+}
+
+.carousel-text {
+  padding: 2rem;
+}
+
+.error-text {
+  color: rgb(86, 76, 76);
+  font-size: 2.5rem;
+}
+
+.error-container {
+  height: 45vh;
+  /* background-color: #dfdf99; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

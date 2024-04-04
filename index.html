@@ -23,7 +23,7 @@
   <body>
     <!-- Navbar -->
     <div class="container-fluid sticky-top nav-bg">
-      <div class="container navbar navbar-expand-xl d-flex align-items-center">
+      <div class="container navbar navbar-expand-lg d-flex align-items-center">
         <div class="container-fluid">
           <a
             href="./index.html"
@@ -70,7 +70,7 @@
                 </li>
               
                 <li class="nav-item me-3">
-                  <a class="nav-link nav-links link-trans beer-function" href="#">Our beers</a>
+                  <a class="nav-link nav-links link-trans beer-function" href="#">Our Beers</a>
                 </li>
                 <li class="nav-item me-3">
                   <a class="nav-link nav-links link-trans menu-function"  href="#">Menus</a>
@@ -119,7 +119,7 @@
             <div class="comment-text">
              <div class="row">
               <div class="col">
-                <h1>
+                <h1  class="carousel-text">
                   Crafted moments worth savoring
                 </h1>
               </div>
@@ -131,7 +131,7 @@
             <div class="comment-text">
               <div class="row">
                 <div class="col">
-                  <h1>
+                  <h1  class="carousel-text">
                     Crafted moments worth savoring
                   </h1>
                 </div>
@@ -142,7 +142,7 @@
             <div class="comment-text">
               <div class="row">
                 <div class="col">
-                  <h1>
+                  <h1 class="carousel-text">
                     Crafted moments worth savoring
                   </h1>
                 </div>
@@ -271,44 +271,10 @@
 
  <!-- Menus -->
  <div class="container-fluid menu-container">
-   <!-- <div class="container">
-    <div class="row">
-      <div class="col text-design">
-        <h2 class="text-center beer-text mt-4">Our Menus</h2>
-        <p>Satisfy Every Plate</p>
-      </div>
-    </div>
-    <div class="row text-center mt-5">
-     <div class="col">
-      <button  class="btn btn-lg btn-warning btn-main-course">Main Course</button>
-      <button class="btn btn-lg btn-warning btn-bread">Bread & Tacos</button>
-      <button class="btn btn-lg  btn-warning btn-pasta ">Pasta & Pizza</button>
-      <button class="btn btn-lg  btn-warning btn-salad">Salad</button>
-     </div>
-    </div>
-    <div class="row  row-cols-1 row-cols-lg-6 g-5 pb-4 mt-5 show-menu">
-      <div class=" col-sm-12 col-md-12 col-lg-6 menu-style">
-          <div class="row d-flex">
-            <img src="./images/menuCover/lasagna.svg" class="col-md-5 col-lg-5">
-            <div class=" col-md-7 col-lg-7 menu-text">
-              <h3 class="menu-name">Lasagna</h3>
-              <p>Tender steak coated in seasoned flour, fried until golden brown, and served with creamy gravy.</p>
-              <p class="ingredients">Beef steak, Flour, Eggs, Milk, Salt, Pepper, Seasonings, Oil for frying</p>
-              <p>Price : 14 USD</p>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h2 class="text-advice">Kindly be advised that our menus are subject to regular updates based on seasonal availability.<br> For the latest information on our offerings, feel free to reach out to us via phone or email.</h2>
-      </div>
-    </div>
-   </div> -->
+
   </div>
- 
  <!-- End Menus -->
-<!-- Contact -->
+
  <!-- Contact Section -->
  <div class="container-fluid contact-container">
   <!-- <div class="row contact-details">
@@ -384,7 +350,7 @@
         <p> Send Us Your Thoughts and Queries! We're Here to Listen.<br> Got a Question? We've Got Answers! <br>Connect with Us Today. Your Feedback Matters to Us!</p>
       </div>
       <div class= " col-sm-12 col-md-6 col-lg-6">
-        <form class="row  my-3 mx-4 contact-field mt-4 "  name="submit-to-google-sheet">
+        <form class="row  my-3 mx-4 contact-field mt-4 "  name="submit-to-google-sheet" novalidate>
           <div class="col-md-6 border-form">
               <label class="form-label">First Name</label>
               <input class="form-control no-border"  type="text" name="Name" required>
@@ -424,20 +390,32 @@
   </div> -->
   </div>
 <!-- End of Contact -->
- <!-- Search Section -->
 
+ <!-- Search Section -->
  <div class="container-fluid search-section">
-  <!-- <div class="container">
-    <div class="search-by-state">
-      <h2 class="text-center brew-text">Texas Brewery Guide</h2>
-      <div class="display-directories">
-      <div class="row row-cols-1 row-cols-md-4 g-4 pb-4 directories">
-      </div>
-      </div>
-      <hr>    
-    </div>
-  </div> -->
  </div>
+<!-- End of Search Section -->
+
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="errorModalLabel">Error</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="errorModalBody">
+        <!-- Error message will be displayed here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Error -->
+<div class="container-fluid errors-search">
+
+</div>
+<!-- error end -->
+
 
     <!-- footer -->
     <footer id="footer">
@@ -461,10 +439,10 @@
             <div class="col-sm-12 col-md-4 col-lg-2">
                 <h3>LINKS</h3>
                 <ul class="service">
-                  <li><a href="#" class=" link-trans footer-home nav-links ">Home</a></li>
-                  <li><a href="#" class="  link-trans footer-beer nav-links">Our Beers</a></li>
-                  <li><a href="#" class=" link-trans footer-btn nav-links footer-menu">Menus</a></li>
-                  <li><a href="#" class="link-trans footer-btn nav-links footer-contact">Contact</a></li>
+                  <li><a href="#" class=" link-trans f-nv footer-home nav-links ">Home</a></li>
+                  <li><a href="#" class="  link-trans f-nv footer-beer nav-links ">Our Beers</a></li>
+                  <li><a href="#" class=" link-trans f-nv  footer-menu nav-links ">Menus</a></li>
+                  <li><a href="#" class="link-trans f-nv footer-contact nav-links ">Contact</a></li>
                 </ul>
             </div>
             <div class="col-sm-12 col-md-4 col-lg-3">
@@ -499,9 +477,9 @@
       crossorigin="anonymous"
     ></script>
     
-
-    <!-- <script>
-      (() => {
+<!-- 
+    <script>
+  (() => {
   'use strict'
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -519,8 +497,8 @@
     }, false)
   })
 })()
-    </script> -->
-      
+    </script>
+       -->
 <!-- <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwRYoyclhqep-r_2DnUJ9By06t8VVay73Qgvs7sCRGc0JZtQoPor34JhW2UiQL-FOZE/exec'
   const form = document.forms['submit-to-google-sheet']

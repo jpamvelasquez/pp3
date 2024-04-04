@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function homeSection(e) {
   e.preventDefault();
   toggleNavLinks(this);
+
   toggleClass(".home-container");
+  toggleClass(".errors-search", true);
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
   toggleClass(".menu-container", true);
@@ -46,8 +48,10 @@ function beerSection(e) {
   ourBeer();
   ourBrew();
   toggleNavLinks(this);
+
   toggleClass(".ourBeers");
   toggleClass(".beer-fluid");
+  toggleClass(".errors-search", true);
   toggleClass(".home-container", true);
   toggleClass(".menu-container", true);
   toggleClass(".search-section", true);
@@ -57,12 +61,13 @@ function beerSection(e) {
 function menuSection(e) {
   e.preventDefault();
   toggleNavLinks(this);
+
   toggleClass(".menu-container");
 
   menuHeading();
   // menuContainer();
   // mainCourseOnly();
-
+  toggleClass(".errors-search", true);
   toggleClass(".home-container", true);
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
@@ -73,11 +78,15 @@ function menuSection(e) {
 
 function searchSection(e) {
   toggleNavLinks(this);
+
   e.preventDefault();
+
   onlineBeerApi();
+
   // searchContainer();
 
   toggleClass(".search-section");
+
   toggleClass(".menu-container", true);
   toggleClass(".home-container", true);
   toggleClass(".ourBeers", true);
@@ -103,8 +112,10 @@ function handleKeyEnter(e) {
 function contactSection(e) {
   e.preventDefault();
   toggleNavLinks(this);
+
   displayContact();
   toggleClass(".contact-container");
+  toggleClass(".errors-search", true);
   toggleClass(".search-section", true);
   toggleClass(".menu-container", true);
   toggleClass(".home-container", true);
@@ -331,6 +342,8 @@ function onlineBeerApi() {
 
   if (state === "" || !isNaN(state) || state.length <= 3) {
     alert("Invalid Input. Please enter a state.");
+    ("error1");
+    console.log("Invalid Input. Please enter a state.");
     toggleClass(".footer-section", true);
     window.location.href = "index.html";
     return;
@@ -349,11 +362,14 @@ function onlineBeerApi() {
 
     if (beerOnlineApi.length === 0) {
       // No breweries found for the provided state
-      alert("No breweries found for the provided state.");
-      toggleClass(".footer-section", true);
-      window.location.href = "index.html";
+      displayError();
+      toggleClass(".errors-search");
+      toggleClass(".search-section", true);
+      console.log("error2");
+
       return;
     }
+    searchContainer();
 
     let divs = "";
 
@@ -385,25 +401,23 @@ function onlineBeerApi() {
                 ? beerOnlineApi[keys].street
                 : "<span class='not-avail'>Not Available</span>"
             }</p>
-            <p class="card-text">Phone : ${
-              beerOnlineApi[keys].phone
-                ? beerOnlineApi[keys].phone
-                : "<span class='not-avail>Not Available</span>"
+            <p class="card-text">Phone: ${
+              beerOnlineApi[keys].phone === null
+                ? "<span class='not-avail'>Not Available</span>"
+                : `${beerOnlineApi[keys].phone}`
             }</p>
             <a href="${
               beerOnlineApi[keys].website_url || "#"
-            }" target="_blank" class="card-link"> Website : ${
+            }" target="_blank" class="card-link"> ${
         beerOnlineApi[keys].website_url
-          ? `<span class='link-site'>${domainOnly}</span>`
-          : "<span class='not-avail'>Not Available </span>"
+          ? `Website : <span class='link-site'>${domainOnly}</span>`
+          : "Website : <span class='not-avail'>Not Available </span>"
       }</a>
             </div>
           </div>
         </div>
     </div>`;
     }
-    toggleClass(".online-api-spinner-container", true);
-    searchContainer();
 
     let stateText = state.split(" ");
     let textSplit = [];
@@ -417,15 +431,16 @@ function onlineBeerApi() {
     ).innerText = `${stateName} Brewery Guide`;
     document.querySelector(".directories").innerHTML = divs;
     document.querySelector(".state-form").value = "";
-
+    toggleClass(".search-section");
+    toggleClass(".errors-search", true);
     console.log("working api");
+    toggleClass(".online-api-spinner-container", true);
   });
 }
 
 function searchContainer() {
   let div = `
 
-    
   <div class="container">
   <div class="search-by-state">
     <h2 class="text-center brew-text">Texas Brewery Guide</h2>
@@ -614,9 +629,16 @@ function toggleButtonClasses(clickedButton) {
 
 function toggleNavLinks(clickedButton) {
   const links = document.querySelectorAll(".nav-links");
+  const innerText = clickedButton.innerText;
 
-  links.forEach((link) => link.classList.remove("active"));
-  clickedButton.classList.add("active");
+  links.forEach((link) => {
+    if (link.innerText === innerText) {
+      link.classList.add("active");
+      console.log(link.innerText);
+    } else {
+      link.classList.remove("active");
+    }
+  });
 }
 
 //Contact
@@ -629,27 +651,7 @@ function displayContact() {
   </div>
   
   <div class="row info">
-    <div class="col-sm-12 col-md-4 col-lg-4 location">
-      <div class="d-flex justify-content-center mb-4">
-      <div class="contact-icon">
-        <i class="bi bi-geo-alt"></i>
-      </div>
-      </div>
-      <h3 class="contact-section">Hours & Location</h3>
-      <div class="bar-address">
-        <h4 class="days">Address</h4>
-        <p>196 Co Road 110</p>
-        <p>Comanche Texas, 742</p>
-        <p>United States</p>
-      </div>
-      <h3 class="days">Monday - Thursday</h3>
-      <p> 10:00 am to 10:00 pm</p>
-      <h3 class="days"> Friday & Saturday </h3>
-      <p>10:00 am to 11:00 pm</p>
-      <h3 class="days"> Sunday</h3>
-      <p>CLOSED</p>
-     
-    </div>
+   
     <div class="col-sm-12 col-md-4 col-lg-4 phone">
       <div class="d-flex justify-content-center  mb-4">
       <div class="contact-icon">
@@ -666,6 +668,27 @@ function displayContact() {
         Tel : (Booking): +1 (555) 234-5678
       </p>
     </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 location">
+    <div class="d-flex justify-content-center mb-4">
+    <div class="contact-icon">
+      <i class="bi bi-geo-alt"></i>
+    </div>
+    </div>
+    <h3 class="contact-section">Hours & Location</h3>
+    <div class="bar-address">
+      <h4 class="days">Address</h4>
+      <p>196 Co Road 110</p>
+      <p>Comanche Texas, 742</p>
+      <p>United States</p>
+    </div>
+    <h3 class="days">Monday - Thursday</h3>
+    <p> 10:00 am to 10:00 pm</p>
+    <h3 class="days"> Friday & Saturday </h3>
+    <p>10:00 am to 11:00 pm</p>
+    <h3 class="days"> Sunday</h3>
+    <p>CLOSED</p>
+   
+  </div>
     <div class="col-sm-12 col-md-4 col-lg-4 email">
       <div class="d-flex justify-content-center  mb-4">
         <div class="contact-icon">
@@ -695,7 +718,7 @@ function displayContact() {
       <p> Send Us Your Thoughts and Queries! We're Here to Listen.<br> Got a Question? We've Got Answers! <br>Connect with Us Today. Your Feedback Matters to Us!</p>
     </div>
     <div class= " col-sm-12 col-md-6 col-lg-6">
-      <form class="row  my-3 mx-4 contact-field mt-4 "  name="submit-to-google-sheet">
+      <form class="row  my-3 mx-4 contact-field mt-4 needs-validation "  novalidate>
         <div class="col-md-6 border-form">
             <label class="form-label">First Name</label>
             <input class="form-control no-border"  type="text" name="Name" required>
@@ -723,7 +746,7 @@ function displayContact() {
         </div>
         
         <div class="col-md mt-4 ">
-          <button type="submit" class="btn px-4 btn-warning my-2 submit-form">
+          <button type="button" class="btn px-4 btn-warning my-2 submit-form">
             Submit
           </button>
           </div>
@@ -735,4 +758,29 @@ function displayContact() {
 </div>`;
 
   document.querySelector(".contact-container").innerHTML = div;
+}
+
+// function showErrorModal(message) {
+//   const errorModalBody = document.getElementById("errorModalBody");
+//   errorModalBody.textContent = message;
+//   const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
+//   errorModal.show();
+// }
+
+// const searchError = true;
+
+// if (searchError) {
+//   showErrorModal(
+//     "An error occurred during the search. Please try again later."
+//   );
+// }
+
+function displayError() {
+  let div = `<div class="container error-container">
+  <div class="error-message">
+    <h2 class="text-center error-text">Apologies but no breweries found for the provided state. <i class="bi bi-emoji-frown"></i></h2>
+  </div>
+</div>`;
+
+  document.querySelector(".errors-search").innerHTML = div;
 }
