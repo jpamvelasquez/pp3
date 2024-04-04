@@ -97,7 +97,7 @@ function searchSection(e) {
 function handleKeyEnter(e) {
   if (e.key === "Enter") {
     e.preventDefault();
-
+    toggleNavLinks(this);
     onlineBeerApi();
 
     toggleClass(".search-section");
