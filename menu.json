@@ -4,14 +4,14 @@
     "categories": "Entrees",
     "ingredients": "Mozzarella Cheese , Cheddar Cheese, Parmessan Cheese, Gouda Cheese",
     "price": "12.99",
-    "description": "Indulge in a heavenly combination of Mozzarella, Cheddar, Parmesan, and Gouda cheeses on our hand-tossed artisan crust.",
+    "description": "Indulge in a heavenly combination of  cheeses on our hand-tossed artisan crust.",
     "photo": "./images/menuCover/cheesy.svg",
     "photo2": "./images/menuCover/cheese-s.png"
   },
   {
     "name": "Supreme Delight ",
     "categories": "Entrees",
-    "ingredients": "Mozzarella Cheese , Sliced Pepperoni, Fresh Mushrooms, Olive, Crisp bell peppers, Sliced Onions, Rich marinara sauce, Hand-tossed artisan crust",
+    "ingredients": "Mozzarella Cheese , Sliced Pepperoni, Fresh Mushrooms, Olive, Crisp bell peppers, Sliced Onions, Hand-tossed artisan crust",
     "price": "14.99",
     "description": "The 'Supreme Delight' is a mouthwatering entree. ",
     "photo": "./images/menuCover/supreme.svg",
@@ -27,11 +27,11 @@
     "photo2": "./images/menuCover/lasagna-s.png"
   },
   {
-    "name": "Spaghetti With Marinara Sauce",
+    "name": "Spaghetti Marinara",
     "categories": "Entrees",
     "ingredients": "Spaghetti pasta, Marinara sauce, Ground beef, Onion, Garlic, Olive oil, Italian seasoning, Salt, Pepper",
     "price": "10.99",
-    "description": "Enjoy a hearty plate of al dente spaghetti pasta generously topped with savory marinara sauce.",
+    "description": "Enjoy a hearty plate of al dente spaghetti pasta with savory marinara sauce.",
     "photo": "./images/menuCover/spag.svg",
     "photo2": "./images/menuCover/spag-s.png"
   },
@@ -40,7 +40,7 @@
     "categories": "Appetizer",
     "ingredients": "Chickpeas, Tahini, Lemon juice, Garlic, Olive oil, Salt, Pita bread",
     "price": "8.99",
-    "description": "Indulge in a delightful appetizer featuring creamy and smooth classic hummus made from blended chickpeas.",
+    "description": "Indulge in a delightful appetizer featuring creamy smooth c hummus.",
     "photo": "./images/menuCover/hummus.svg",
     "photo2": "./images/menuCover/hummus-s.png"
   },
@@ -49,7 +49,7 @@
     "categories": "Appetizer",
     "ingredients": "Ground beef, Taco seasoning, Tortillas, Lettuce, Tomato, Cheese, Salsa, Sour cream",
     "price": "12.99",
-    "description": "Savor the irresistible flavors of seasoned ground beef served in soft tortillas, topped with fresh lettuce.",
+    "description": "Savor the irresistible flavors of seasoned ground beef served in soft tortillas.",
     "photo": "./images/menuCover/tacos.svg",
     "photo2": "./images/menuCover/tacos-s.png"
   },
