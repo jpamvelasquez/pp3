@@ -5,7 +5,8 @@
     "ingredients": "Mozzarella Cheese , Cheddar Cheese, Parmessan Cheese, Gouda Cheese",
     "price": "12.99",
     "description": "Indulge in a heavenly combination of Mozzarella, Cheddar, Parmesan, and Gouda cheeses on our hand-tossed artisan crust.",
-    "photo": "./images/menuCover/cheesy.svg"
+    "photo": "./images/menuCover/cheesy.svg",
+    "photo2": "./images/menuCover/cheese-s.png"
   },
   {
     "name": "Supreme Delight ",
@@ -13,7 +14,8 @@
     "ingredients": "Mozzarella Cheese , Sliced Pepperoni, Fresh Mushrooms, Olive, Crisp bell peppers, Sliced Onions, Rich marinara sauce, Hand-tossed artisan crust",
     "price": "14.99",
     "description": "The 'Supreme Delight' is a mouthwatering entree. ",
-    "photo": "./images/menuCover/supreme.svg"
+    "photo": "./images/menuCover/supreme.svg",
+    "photo2": "./images/menuCover/supreme-s.png"
   },
   {
     "name": "Lasagna",
@@ -21,7 +23,8 @@
     "ingredients": "Lasagna noodles, Ground beef, Tomato sauce, Ricotta cheese, Onion, Garlic, Italian seasoning, Salt, Pepper",
     "price": "14.99",
     "description": "Indulge in layers of flavorful lasagna noodles.",
-    "photo": "./images/menuCover/lasagna.svg"
+    "photo": "./images/menuCover/lasagna.svg",
+    "photo2": "./images/menuCover/lasagna-s.png"
   },
   {
     "name": "Spaghetti With Marinara Sauce",
@@ -29,7 +32,8 @@
     "ingredients": "Spaghetti pasta, Marinara sauce, Ground beef, Onion, Garlic, Olive oil, Italian seasoning, Salt, Pepper",
     "price": "10.99",
     "description": "Enjoy a hearty plate of al dente spaghetti pasta generously topped with savory marinara sauce.",
-    "photo": "./images/menuCover/spag.svg"
+    "photo": "./images/menuCover/spag.svg",
+    "photo2": "./images/menuCover/spag-s.png"
   },
   {
     "name": "Classic Hummus with Pita Bread",
@@ -37,7 +41,8 @@
     "ingredients": "Chickpeas, Tahini, Lemon juice, Garlic, Olive oil, Salt, Pita bread",
     "price": "8.99",
     "description": "Indulge in a delightful appetizer featuring creamy and smooth classic hummus made from blended chickpeas.",
-    "photo": "./images/menuCover/hummus.svg"
+    "photo": "./images/menuCover/hummus.svg",
+    "photo2": "./images/menuCover/hummus-s.png"
   },
   {
     "name": "Beef Tacos",
@@ -45,7 +50,8 @@
     "ingredients": "Ground beef, Taco seasoning, Tortillas, Lettuce, Tomato, Cheese, Salsa, Sour cream",
     "price": "12.99",
     "description": "Savor the irresistible flavors of seasoned ground beef served in soft tortillas, topped with fresh lettuce.",
-    "photo": "./images/menuCover/tacos.svg"
+    "photo": "./images/menuCover/tacos.svg",
+    "photo2": "./images/menuCover/tacos-s.png"
   },
   {
     "name": "Chicken Caesar Salad",
@@ -53,7 +59,8 @@
     "ingredients": "Romaine lettuce, Grilled chicken breast, Parmesan cheese, Croutons, Caesar dressing",
     "price": "9.99",
     "description": "Indulge in the classic combination of crisp romaine lettuce, grilled chicken breast.",
-    "photo": "./images/menuCover/ceasar.svg"
+    "photo": "./images/menuCover/ceasar.svg",
+    "photo2": "./images/menuCover/ceasar-s.png"
   },
   {
     "name": "Herb Lemon Salad",
@@ -61,7 +68,8 @@
     "description": "A vibrant salad bursting with fresh herbs and zesty lemon dressing.",
     "ingredients": "Mixed greens, parsley, cilantro, dill, mint, lemon zest, lemon juice, olive oil, salt, pepper",
     "price": "8.99",
-    "photo": "./images/menuCover/herbs.svg"
+    "photo": "./images/menuCover/herbs.svg",
+    "photo2": "./images/menuCover/herbs-s.png"
   },
 
   {
@@ -70,7 +78,8 @@
     "description": "Tender slices of slow-roasted beef served with savory gravy.",
     "ingredients": "Beef roast, Salt, Pepper, Garlic, Onion, Beef broth, Flour",
     "price": "14.99",
-    "photo": "./images/menuCover/roast.svg"
+    "photo": "./images/menuCover/roast.svg",
+    "photo2": "./images/menuCover/roast-s.png"
   },
   {
     "name": "Grilled Tuna Steak",
@@ -78,7 +87,8 @@
     "description": "Delicious tuna steak seasoned with herbs and spices, grilled to perfection.",
     "ingredients": "Tuna steak, Olive oil, Lemon juice, Garlic, Salt, Pepper, Herbs",
     "price": "16.99",
-    "photo": "./images/menuCover/tuna.svg"
+    "photo": "./images/menuCover/tuna.svg",
+    "photo2": "./images/menuCover/grill-s.png"
   },
 
   {
@@ -87,7 +97,8 @@
     "description": "Tender steak coated in seasoned flour, fried until golden brown, and served with creamy gravy.",
     "ingredients": "Beef steak, Flour, Eggs, Milk, Salt, Pepper, Seasonings, Oil for frying",
     "price": "14.99",
-    "photo": "./images/menuCover/chicken.svg"
+    "photo": "./images/menuCover/chicken.svg",
+    "photo2": "./images/menuCover/chix-s.png"
   },
   {
     "name": "Steamed Fish",
@@ -95,6 +106,7 @@
     "description": "Fresh fish fillet delicately seasoned and steamed to perfection, served with a side of vegetables.",
     "ingredients": "Fresh fish fillet, Seasonings, Vegetables",
     "price": "16.99",
-    "photo": "./images/menuCover/steamfish.svg"
+    "photo": "./images/menuCover/steamfish.svg",
+    "photo2": "./images/menuCover/steam-s.png"
   }
 ]

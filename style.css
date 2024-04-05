@@ -11,7 +11,7 @@ html {
 
 body {
   font-size: 1.7rem;
-  font-family: "Marcellus", serif;
+  font-family: "Lekton", serif;
   font-weight: 500;
 }
 .nav-bg {
@@ -636,10 +636,10 @@ footer p {
 .info {
   display: flex;
   justify-content: center;
-
   text-align: center;
-  /* background-color: #979530; */
-  padding: 0 6rem;
+
+  margin: 0 !important;
+  padding: 0 7rem;
 }
 
 .bar-address {
@@ -800,4 +800,8 @@ footer p {
 
 .hidden {
   display: none;
+}
+
+.contact-p {
+  padding-right: 2rem;
 }

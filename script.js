@@ -573,7 +573,7 @@ function mainCourseOnly() {
       div += `
         <div class="col-sm-12 col-md-12 col-lg-6 menu-style">
           <div class="row d-flex">
-            <img src="${menuItem.photo}" class="col-md-5 col-lg-5">
+            <img src="${menuItem.photo}" loading="lazy" class="col-md-5 col-lg-5">
             <div class="col-md-7 col-lg-7 menu-text">
               <h3 class="menu-name">${menuItem.name}</h3>
               <p class='mt-1'>${menuItem.description}</p>
@@ -662,13 +662,13 @@ function toggleNavLinks(clickedButton) {
 function displayContact() {
   let div = `  <div class="row contact-details">
   <div class="text-design mb-4">
-    <h2 class="beer-text text-center contact-reach">Reach out to us</h2>
-    <p> Get in Touch for Brews & Bookings!</p>
+    <h2 class="beer-text text-center contact-reach">Get in Touch</h2>
+    <p class='contact-p'>Contact Us for Brews & Bookings!</p>
   </div>
   
   <div class="row info">
-   
-    <div class="col-sm-12 col-md-4 col-lg-4 phone">
+  
+    <div class="col-sm-12 col-md-4 phone">
       <div class="d-flex justify-content-center  mb-4">
       <div class="contact-icon">
         <i class="bi bi-telephone"></i>
@@ -684,7 +684,7 @@ function displayContact() {
         Tel : (Booking): +1 (555) 234-5678
       </p>
     </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 location">
+    <div class="col-sm-12 col-md-4  location">
     <div class="d-flex justify-content-center mb-4">
     <div class="contact-icon">
       <i class="bi bi-geo-alt"></i>
@@ -705,7 +705,7 @@ function displayContact() {
     <p>CLOSED</p>
    
   </div>
-    <div class="col-sm-12 col-md-4 col-lg-4 email">
+    <div class="col-sm-12 col-md-4 email">
       <div class="d-flex justify-content-center  mb-4">
         <div class="contact-icon">
           <i class="bi bi-chat-square-dots"></i>
