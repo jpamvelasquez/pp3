@@ -562,7 +562,7 @@ footer p {
   color: rgba(255, 179, 0, 0.9);
   border-radius: 90px 90px 7px 7px;
   background: #fff;
-  animation: fill 2s linear infinite alternate;
+  animation: fill 1.3s linear infinite alternate;
   border-bottom: 1px solid rgb(233, 228, 198);
 }
 .loader::after {
@@ -577,7 +577,7 @@ footer p {
   background: #fff;
   width: 25px;
   height: 75px;
-  animation: fillNeck 2s linear infinite alternate;
+  animation: fillNeck 1.3s linear infinite alternate;
 }
 .loader-div {
   text-align: center;
@@ -605,7 +605,7 @@ footer p {
     box-shadow: 0 0 inset;
   }
   100% {
-    box-shadow: 0 -60px inset;
+    box-shadow: 0 -70px inset;
   }
 }
 
@@ -819,4 +819,8 @@ footer p {
 
 .contact-p {
   padding-right: 2rem;
+}
+
+.nav-link {
+  font-size: 1.8rem;
 }
