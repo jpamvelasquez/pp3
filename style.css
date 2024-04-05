@@ -168,6 +168,10 @@ form button {
   cursor: pointer;
 }
 
+.img-modal {
+  height: 50vh;
+}
+
 /* modal */
 
 .modal {
@@ -175,9 +179,11 @@ form button {
 }
 .modal-dialog {
   max-width: 90rem;
+  margin-bottom: 3rem;
 }
 .modal-header {
   background-color: #e3e3da;
+  height: 8rem;
 }
 
 .img-resizes {
@@ -273,6 +279,7 @@ form button {
   height: 3.5rem;
   outline: none !important;
   box-shadow: none;
+  margin-right: 1.5rem;
 }
 .form-select:focus {
   outline: none !important;
@@ -760,7 +767,9 @@ footer p {
 }
 
 .f-nv {
-  line-height: 2.6rem !important;
+  margin-bottom: 0.3rem;
+
+  display: inline-block;
 }
 
 .offcanvas-end {

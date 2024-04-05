@@ -192,7 +192,7 @@ function modalBeer(data) {
               <div class="row">
                 <div class="col-md-5 text-center">
                   <div class="img-resizes">
-                  <img src="${data[keys].photo}" />
+                  <img src="${data[keys].photo}" class='img-modal' />
                 </div>
                 <p class="fw-bold">Price :<span class="fw-normal"> ${data[keys].price} USD </span> </p>
                 </div>
@@ -603,10 +603,10 @@ function menuHeading() {
   </div>
   <div class="row text-center mt-5">
    <div class="col ">
-    <button  class="btn btn-lg  btn-main-course btn-warning btn-active me-2 mb-1"">Main Course</button>
-    <button class="btn btn-lg me-2  mb-1 btn-warning btn-bread">Bread & Tacos</button>
-    <button class="btn mb-1 btn-lg  me-2 btn-warning btn-pasta ">Pasta & Pizza</button>
-    <button class="btn btn-lg  me-2  mb-1 btn-warning btn-salad">Salad</button>
+    <button  class="btn btn-lg  btn-main-course btn-warning btn-active me-2 mb-2"">Main Course</button>
+    <button class="btn btn-lg me-2  mb-2 btn-warning btn-bread">Bread & Tacos</button>
+    <button class="btn mb-2 btn-lg  me-2 btn-warning btn-pasta ">Pasta & Pizza</button>
+    <button class="btn btn-lg  me-2  mb-2 btn-warning btn-salad">Salad</button>
    </div>
   </div>
   <div class="spinner-container">
