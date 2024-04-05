@@ -799,7 +799,7 @@ footer p {
 }
 
 .search-modal-dialog {
-  width: 50rem;
+  width: 50rem !important;
   height: 90rem;
 }
 

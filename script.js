@@ -738,7 +738,7 @@ function displayContact() {
       <p> Send Us Your Thoughts and Queries! We're Here to Listen.<br> Got a Question? We've Got Answers! <br>Connect with Us Today. Your Feedback Matters to Us!</p>
     </div>
     <div class= " col-sm-12 col-md-6 col-lg-6">
-      <form class="row  my-3 mx-4 contact-field mt-4 needs-validation "  novalidate>
+      <form class="row  my-3 mx-4 contact-field mt-4 needs-validation" name="submit-to-google-sheet"  novalidate>
         <div class="col-md-6 border-form">
             <label class="form-label">First Name</label>
             <input class="form-control no-border"  type="text" name="Name" required>
@@ -766,7 +766,7 @@ function displayContact() {
         </div>
         
         <div class="col-md mt-4 ">
-          <button type="button" class="btn px-4 btn-warning my-2 submit-form">
+          <button type="submit" class="btn px-4 btn-warning my-2 submit-form">
             Submit
           </button>
           </div>
@@ -778,6 +778,48 @@ function displayContact() {
 </div>`;
 
   document.querySelector(".contact-container").innerHTML = div;
+
+  (() => {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll(".needs-validation");
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach((form) => {
+      form.addEventListener(
+        "submit",
+        (event) => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+
+  // const scriptURL =
+  //   "https://script.google.com/macros/s/AKfycbwRYoyclhqep-r_2DnUJ9By06t8VVay73Qgvs7sCRGc0JZtQoPor34JhW2UiQL-FOZE/exec";
+  // const form = document.forms["submit-to-google-sheet"];
+
+  // const message = document.querySelector(".form-message");
+
+  // form.addEventListener("submit", (e) => {
+  //   e.preventDefault();
+
+  //   fetch(scriptURL, { method: "POST", body: new FormData(form) })
+  //     .then((response) => {
+  //       message.innerHTML =
+  //         'The message has been successfully sent. <i class="bi bi-check2"></i>';
+  //       setTimeout(function () {
+  //         message.innerHTML = "";
+  //       }, 3000);
+  //       form.reset();
+  //     })
+  //     .catch((error) => console.error("Error!", error.message));
+  // });
 }
 
 function showErrorModal(message) {
@@ -786,14 +828,6 @@ function showErrorModal(message) {
   const errorModal = new bootstrap.Modal(document.getElementById("errorModal"));
   errorModal.show();
 }
-
-// const searchError = true;
-
-// if (searchError) {
-//   showErrorModal(
-//     "An error occurred during the search. Please try again later."
-//   );
-// }
 
 function displayError(message) {
   let div = `<div class="container error-container">

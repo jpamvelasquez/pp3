@@ -86,7 +86,7 @@
                 <input
                   class="form-control me-2 align-items- state-form state-press"
                   type="text"
-                  placeholder="Explore more breweries."
+                  placeholder="Explore more breweries"
                   aria-label="Search"
                 />
                 <button class="btn btn-warning btn-search nav-links search-function " type="button">
@@ -350,7 +350,7 @@
         <p> Send Us Your Thoughts and Queries! We're Here to Listen.<br> Got a Question? We've Got Answers! <br>Connect with Us Today. Your Feedback Matters to Us!</p>
       </div>
       <div class= " col-sm-12 col-md-6 col-lg-6">
-        <form class="row  my-3 mx-4 contact-field mt-4 "  name="submit-to-google-sheet" novalidate>
+        <form class="row  my-3 mx-4 contact-field mt-4 needs-validation "  novalidate>
           <div class="col-md-6 border-form">
               <label class="form-label">First Name</label>
               <input class="form-control no-border"  type="text" name="Name" required>
@@ -447,11 +447,14 @@
             </div>
             <div class="col-sm-12 col-md-4 col-lg-3">
               <h3>NEWSLETTER</h3>
-              <form class="form-footer">
+              <form class="form-footer needs-validation">
                 <i class="bi bi-envelope-at-fill"></i>
-                <input type="email" placeholder="Enter your email" />
-                <button type="submit"><i class="bi bi-arrow-right"></i></button>
+                <input type="email" placeholder="Enter your email" required/>
+                <button type="submit"><i class="bi bi-arrow-right d-block"></i></button>
+                <div class="invalid-feedback">Invalid email</div>
+                
               </form>
+              
               <div class="footer-social">
                 <i class="bi bi-facebook"></i>
                 <i class="bi bi-twitter-x"></i>
@@ -478,9 +481,9 @@
     ></script>
     
 <!-- 
-    <script>
+     <script>
   (() => {
-  'use strict'
+ 
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll('.needs-validation')
@@ -497,8 +500,8 @@
     }, false)
   })
 })()
-    </script>
-       -->
+    </script>  -->
+      
 <!-- <script>
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwRYoyclhqep-r_2DnUJ9By06t8VVay73Qgvs7sCRGc0JZtQoPor34JhW2UiQL-FOZE/exec'
   const form = document.forms['submit-to-google-sheet']
