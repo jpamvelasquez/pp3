@@ -343,6 +343,13 @@ function ourBrew() {
 //Online API Calling
 function onlineBeerApi() {
   let state = document.querySelector(".state-form").value.trim().toLowerCase();
+  let stateText = state.split(" ");
+  let textSplit = [];
+  for (const name of stateText) {
+    textSplit.push(name.replace(name[0], name[0].toUpperCase()));
+  }
+  let stateName = textSplit.join(" ");
+  console.log(stateName);
 
   if (state === "" || !isNaN(state) || state.length <= 3) {
     const searchError = true;
@@ -377,7 +384,7 @@ function onlineBeerApi() {
     const beerOnlineApi = JSON.parse(this.responseText);
     console.log(beerOnlineApi);
 
-    if (beerOnlineApi.length === 0) {
+    if (beerOnlineApi.length === 0 || beerOnlineApi[0].state !== stateName) {
       // No breweries found for the provided state
       displayError("Apologies but no breweries found for the provided state.");
       toggleClass(".errors-search");
@@ -439,13 +446,6 @@ function onlineBeerApi() {
     </div>`;
     }
 
-    let stateText = state.split(" ");
-    let textSplit = [];
-    for (const name of stateText) {
-      textSplit.push(name.replace(name[0], name[0].toUpperCase()));
-    }
-    let stateName = textSplit.join(" ");
-    console.log(stateText);
     document.querySelector(
       ".brew-text"
     ).innerText = `${stateName} Brewery Guide`;
@@ -831,8 +831,14 @@ function showErrorModal(message) {
 
 function displayError(message) {
   let div = `<div class="container error-container">
-  <div class="error-message">
+  <div class='modal-body'>
+  <div class='row'>
+  <div class='col'>
+  <div class="error-message col-sm-12 col-md-12 ">
     <h2 class="text-center error-text">${message}</i></h2>
+  </div>
+  </div>
+  </div>
   </div>
 </div>`;
 
