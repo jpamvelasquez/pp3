@@ -102,7 +102,7 @@ function handleKeyEnter(e) {
     e.preventDefault();
     toggleNavLinks(this);
     onlineBeerApi();
-
+    scrollUp();
     toggleClass(".search-section");
     toggleClass(".menu-container", true);
     toggleClass(".home-container", true);
@@ -369,6 +369,9 @@ function onlineBeerApi() {
     `https://api.openbrewerydb.org/v1/breweries?by_state=${state}&per_page=12`
   );
   beerApi.send();
+  document.querySelector(".spinner-containers").classList.remove("hidden");
+  document.querySelector(".search-section").innerHTML = "";
+  document.querySelector(".errors-search").innerHTML = "";
 
   beerApi.addEventListener("load", function () {
     const beerOnlineApi = JSON.parse(this.responseText);
@@ -379,6 +382,7 @@ function onlineBeerApi() {
       displayError("Apologies but no breweries found for the provided state.");
       toggleClass(".errors-search");
       toggleClass(".search-section", true);
+      document.querySelector(".spinner-containers").classList.add("hidden");
       console.log("error2");
       document.querySelector(".state-form").value = "";
 
@@ -386,7 +390,7 @@ function onlineBeerApi() {
     }
 
     searchContainer();
-
+    document.querySelector(".spinner-containers").classList.add("hidden");
     let divs = "";
 
     for (const keys of Object.keys(beerOnlineApi)) {
