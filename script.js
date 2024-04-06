@@ -237,7 +237,7 @@ function ourBrew() {
   let div = `
   <div class="container-fluid beer-fluid">
   <div class='hero-beer'>
-  <h1>Where Every Sip Unfolds a Story</h1>
+  <h1 class="carousel-text">Where Every Sip Unfolds a Story</h1>
   </div>
   <div class="container beer-featured">
     <div class="row text-center">
@@ -386,7 +386,9 @@ function onlineBeerApi() {
 
     if (beerOnlineApi.length === 0 || beerOnlineApi[0].state !== stateName) {
       // No breweries found for the provided state
-      displayError("Apologies but no breweries found for the provided state.");
+      displayError(
+        "Apologies but no breweries found for the provided state. <i class='bi bi-emoji-frown'></i>"
+      );
       toggleClass(".errors-search");
       toggleClass(".search-section", true);
       document.querySelector(".spinner-containers").classList.add("hidden");

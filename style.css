@@ -181,11 +181,14 @@ form button {
   max-width: 90rem;
   margin-bottom: 3rem;
 }
+
 .modal-header {
   background-color: #e3e3da;
   height: 8rem;
 }
-
+.error-modal {
+  max-width: 60rem !important;
+}
 .img-resizes {
   height: 50rem;
   text-align: center;
@@ -322,6 +325,7 @@ form button {
   margin-left: 50%;
   line-height: 1;
   font-size: 1.7rem;
+  margin-right: 1.5rem;
 }
 
 /* HOME SECTION */
@@ -777,7 +781,9 @@ footer p {
 }
 
 .carousel-text {
-  padding: 2rem;
+  padding: 2rem !important;
+  color: rgb(212, 212, 189) !important;
+  font-size: 6rem !important;
 }
 
 .error-text {
@@ -806,6 +812,12 @@ footer p {
 .btn-close {
   margin-right: 1rem !important;
 }
+.btn-close:active,
+.btn-close:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 .hidden {
   display: none;
@@ -823,4 +835,13 @@ footer p {
 
 .nav-link {
   font-size: 1.8rem;
+}
+
+.modal-title {
+  font-size: 2.3rem;
+  color: rgb(187, 53, 53);
+}
+
+.header-error {
+  height: 6rem;
 }
