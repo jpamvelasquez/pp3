@@ -343,13 +343,6 @@ function ourBrew() {
 //Online API Calling
 function onlineBeerApi() {
   let state = document.querySelector(".state-form").value.trim().toLowerCase();
-  let stateText = state.split(" ");
-  let textSplit = [];
-  for (const name of stateText) {
-    textSplit.push(name.replace(name[0], name[0].toUpperCase()));
-  }
-  let stateName = textSplit.join(" ");
-  console.log(stateName);
 
   if (state === "" || !isNaN(state) || state.length <= 3) {
     const searchError = true;
@@ -447,7 +440,13 @@ function onlineBeerApi() {
         </div>
     </div>`;
     }
-
+    let stateText = state.split(" ");
+    let textSplit = [];
+    for (const name of stateText) {
+      textSplit.push(name.replace(name[0], name[0].toUpperCase()));
+    }
+    let stateName = textSplit.join(" ");
+    console.log(stateName);
     document.querySelector(
       ".brew-text"
     ).innerText = `${stateName} Brewery Guide`;
