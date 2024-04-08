@@ -564,7 +564,7 @@ footer p {
   border: 1px solid #ffffff;
   box-sizing: border-box;
   color: rgba(255, 179, 0, 0.9);
-  border-radius: 90px 90px 7px 7px;
+  border-radius: 90px 90px 25px 25px;
   background: #fff;
   animation: fill 1.3s linear infinite alternate;
   border-bottom: 1px solid rgb(233, 228, 198);
@@ -575,12 +575,12 @@ footer p {
   position: absolute;
   left: 50%;
   top: 0%;
-  transform: translate(-50%, -95%);
-  border: 2px solid #fff;
+  transform: translate(-50%, -92%);
+  border: 1px solid #fff;
   border-bottom: none;
   background: #fff;
-  width: 25px;
-  height: 75px;
+  width: 23px;
+  height: 60px;
   animation: fillNeck 1.3s linear infinite alternate;
 }
 .loader-div {
