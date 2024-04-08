@@ -200,6 +200,7 @@ function modalBeer(data) {
                   <p class="text-center fs-1">${data[keys].name}</p>
                   <p>ABV : <span>${data[keys].abv}</span></p>
                   <p>Color: <span>${data[keys].color}</span></p>
+                  <p>Ratings : <span>${data[keys].ratings} / 5</span></p>
                   <p>Aromatics : <span>${data[keys].aromatics}</span> </p>
                   <p>Flavor : <span>${data[keys].flavor}</span></p>
                   <p>Pairing Suggestion : <span>${data[keys].bestwith} </span> </p>
