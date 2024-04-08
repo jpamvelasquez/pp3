@@ -124,7 +124,6 @@ function contactSection(e) {
   toggleClass(".home-container", true);
   toggleClass(".ourBeers", true);
   toggleClass(".beer-fluid", true);
-  hideSideNavbar();
 }
 //Function to toggle
 function toggleClass(classSelector, show = false) {
