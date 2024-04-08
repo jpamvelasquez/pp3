@@ -34,7 +34,7 @@ function homeSection(e) {
   e.preventDefault();
   toggleNavLinks(this);
   scrollUp();
-
+  document.querySelector(".spinner-containers").classList.add("hidden");
   toggleClass(".home-container");
   toggleClass(".errors-search", true);
   toggleClass(".ourBeers", true);
@@ -50,7 +50,7 @@ function beerSection(e) {
   ourBrew();
   scrollUp();
   toggleNavLinks(this);
-
+  document.querySelector(".spinner-containers").classList.add("hidden");
   toggleClass(".ourBeers");
   toggleClass(".beer-fluid");
   toggleClass(".errors-search", true);
@@ -66,7 +66,7 @@ function menuSection(e) {
   toggleNavLinks(this);
 
   toggleClass(".menu-container");
-
+  document.querySelector(".spinner-containers").classList.add("hidden");
   menuHeading();
   // menuContainer();
   // mainCourseOnly();
@@ -117,6 +117,7 @@ function contactSection(e) {
   toggleNavLinks(this);
   scrollUp();
   displayContact();
+  document.querySelector(".spinner-containers").classList.add("hidden");
   toggleClass(".contact-container");
   toggleClass(".errors-search", true);
   toggleClass(".search-section", true);
@@ -376,11 +377,20 @@ function onlineBeerApi() {
     const beerOnlineApi = JSON.parse(this.responseText);
     console.log(beerOnlineApi);
 
+    let stateText = state.split(" ");
+    let textSplit = [];
+    for (const name of stateText) {
+      textSplit.push(name.replace(name[0], name[0].toUpperCase()));
+    }
+    let stateName = textSplit.join(" ");
+    console.log(stateName);
+
     if (beerOnlineApi.length === 0 || beerOnlineApi[0].state !== stateName) {
       // No breweries found for the provided state
       displayError(
         "Apologies but no breweries found for the provided state. <i class='bi bi-emoji-frown'></i>"
       );
+      document.querySelector(".spinner-containers").classList.add("hidden");
       toggleClass(".errors-search");
       toggleClass(".search-section", true);
       document.querySelector(".spinner-containers").classList.add("hidden");
@@ -439,13 +449,7 @@ function onlineBeerApi() {
         </div>
     </div>`;
     }
-    let stateText = state.split(" ");
-    let textSplit = [];
-    for (const name of stateText) {
-      textSplit.push(name.replace(name[0], name[0].toUpperCase()));
-    }
-    let stateName = textSplit.join(" ");
-    console.log(stateName);
+
     document.querySelector(
       ".brew-text"
     ).innerText = `${stateName} Brewery Guide`;
