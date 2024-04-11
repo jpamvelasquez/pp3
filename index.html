@@ -284,22 +284,7 @@
  <!-- Search Section -->
  <div class="container-fluid search-section">
  </div>
-<!-- End of Search Section -->
-<!-- <div class="container error-modal" id="error-show-modal">
-<div class="modal fade " id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="">
-  <div class="modal-dialog search-modal-dialog modal-md ">
-    <div class="modal-content">
-      <div class="modal-header search-modal">
-        <h5 class="modal-title" id="errorModalLabel"> <i class="bi bi-x-circle-fill"></i> Error</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="errorModalBody">
-     
-      </div>
-    </div>
-  </div>
-</div>
-</div> -->
+
 
 <div class="container error-modal" id="error-show-modal">
   <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
@@ -352,7 +337,7 @@
             <div class="col-sm-12 col-md-4 col-lg-2">
                 <h3>LINKS</h3>
                 <ul class="service">
-                  <li><a href="#homes" class=" link-trans f-nv footer-home nav-links ">Home</a></li>
+                  <li><a href="#homes" class=" link-trans f-nv footer-home nav-links active">Home</a></li>
                   <li><a href="#ourbeers" class="  link-trans f-nv footer-beer nav-links ">Our Beers</a></li>
                   <li><a href="#menuss" class=" link-trans f-nv  footer-menu nav-links ">Menus</a></li>
                   <li><a href="#contacts" class="link-trans f-nv footer-contact nav-links ">Contact</a></li>
@@ -392,47 +377,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    
-<!-- 
-     <script>
-  (() => {
- 
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
-    </script>  -->
-      
-<!-- <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwRYoyclhqep-r_2DnUJ9By06t8VVay73Qgvs7sCRGc0JZtQoPor34JhW2UiQL-FOZE/exec'
-  const form = document.forms['submit-to-google-sheet']
-
-  const message  = document.querySelector('.form-message');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => { message.innerHTML = 'The message has been successfully sent. <i class="bi bi-check2"></i>'
-      setTimeout(function(){
-        message.innerHTML = ''
-      },3000)
-      form.reset()
-    })
-      .catch(error => console.error('Error!', error.message))
-  })
-</script> -->
     <script src="script.js"></script>
 
   </body>
