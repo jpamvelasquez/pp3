@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let menu = document.querySelector(".menu-function");
   let contact = document.querySelector(".contact-function");
   let keyEnter = document.querySelector(".state-form");
+  console.log("pp3");
 
   //footer
   let footerHome = document.querySelector(".footer-home");
